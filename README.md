@@ -30,7 +30,7 @@ Applications of SRAM include serving as cache memory in microprocessors, providi
 ## Architecture
 <figure>
 <figcaption>Figure 1: Architecture of 16 byte SRAM</figcaption>
-<img src="images/architecture%20sram%20project_page-0001.jpg" alt="Architecture_SRAM" title="Figure 1" height="650" width="3000">
+<img src="./images/architecture%20sram%20project_page-0001.jpg" alt="Architecture_SRAM" title="Figure 1" height="650" width="3000">
 </figure>
 
 
@@ -41,7 +41,7 @@ In this section, Various components of projects are explained and realted equati
 ### 6T SRAM
 <figure>
 <figcaption>Figure 2: 6T SRAM</figcaption>
-<img src="6T%20sram_page-0001.jpg" alt="6T SRAM" title="Figure 2" height="500" width="700">
+<img src="./images/6T%20sram_page-0001.jpg" alt="6T SRAM" title="Figure 2" height="500" width="700">
 </figure>
 
 #### Component 2
