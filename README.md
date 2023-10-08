@@ -7,16 +7,12 @@
 ## Table of Contents
 
 - [Introduction](#Introduction)
-- [Architecture](#architecture)
-  - [Components](#components)
-    - [Component 1](#component-1)
-    - [Component 2](#component-2)
-    - [Component 3](#component-3)
-  - [Images](#images)
-- [Usage](#usage)
-- [Installation](#installation)
-- [Contributing](#contributing)
-- [License](#license)
+- [Architecture](#Architecture)
+- [Components](#Components)
+    - [Precharge_circuit](#Precharge_circuit)
+    - [Write_driver](#Write_driver)
+    - [6T_SRAM](#6T_SRAM)
+    - [Sense_Amplifier](#Sense_Amplifier)
 
 ## Introduction
 
@@ -37,10 +33,34 @@ Applications of SRAM include serving as cache memory in microprocessors, providi
 ## Components
 
 In this section, Various components of projects are explained and realted equations, simulation results are mentioned.
-
-### 6T SRAM
+### Precharge_circuit
+- Preharge circuit is basically used to chrge the BL and BLB node to vdd before write and read operation.
+- When PC=0 at that time the PMOS will be ON and it will charge the BL and BLB to vdd.
+- The middle PMOS is basically the equallizer transistor whose purpose is to equallize the BL and BLB line during precharge period.
 <figure>
-<figcaption>Figure 2: 6T SRAM</figcaption>
+<figcaption>Figure 2: Precharge Circuit</figcaption>
+<img src="./images/6T%20sram_page-0001.jpg" alt="6T SRAM" title="Figure 2" height="500" width="700">
+</figure>
+
+### Write_driver
+- The write driver is used to drive the data to the BL and data' to BLB node.
+- This will be controlled by the ctrl i.e control signal and rwn signal.
+- When ctrl = 1 and rwn = 0 at that time only the write operation will be there.
+<figure>
+<figcaption>Figure 2: Precharge Circuit</figcaption>
+<img src="./images/6T%20sram_page-0001.jpg" alt="6T SRAM" title="Figure 2" height="500" width="700">
+</figure>
+
+- In the scematic, we are using two Pass transistors one for BL and one for BLB.
+- Now we are using a nand gate to generate the control signal for write driver.
+- The nand gate inputs are ctrl and rwn' when both will be 1 then there will be write operation so the output of nand gate i.e 0 will be used to control 
+  the PMOS and the inverted signal i.e 1 will be used to control NMOS.
+- In other conditions the PMOS and NMOS will be at OFF state so nowrite at that time. 
+
+
+### 6T_SRAM
+<figure>
+<figcaption>Figure 3: 6T SRAM</figcaption>
 <img src="./images/6T%20sram_page-0001.jpg" alt="6T SRAM" title="Figure 2" height="500" width="700">
 </figure>
 
@@ -100,46 +120,25 @@ In this section, Various components of projects are explained and realted equati
 - When BL node is completely discharged to 0 at that time the s2 node voltage` is at around 100mv or 0.1V.
 - From this information we can conclude that 0 has been written in the node s2.
 
+**SRAM SNM**
+- SNM stands for static noise margine.
+- In the case of SRAM, static noise margin (SNM) is a critical parameter that determines the stability and reliability of data storage. Imagine SRAM cells as tiny switches storing bits of information. SNM measures how much electrical noise these switches can withstand without causing data corruption.
+- In SRAM design, a higher SNM is crucial because it ensures that data remains intact even in the presence of electrical disturbances. It's a key factor in making SRAM memory cells stable and dependable for storing information.
+- Since SRAM cell is basically a back to back inverter structure and is a symmetrical design, we can use butterfly structure and square fitting to find out SNM.
+  
+<div style="display: flex; justify-content: space-between;">
+  <img src="image1.jpg" alt="Image 1" width="48%">
+  <img src="image2.jpg" alt="Image 2" width="48%">
+</div>
 
+### Sense_Amplifier
+- It is basically a differential amplifier which is used here during read operation.
+- The application of sense amplifier here is to sense the small differential voltage between BL and BLB node and read the data as 0 or 1.
+- This is basically used for making the reading process faster.
+- Because we are precharging the BL and BLB node so we are going use a NMOS based sense amplifier i.e the BL and BLB will be connected to gates of NMOS that are signal transistors.
 
-
-
-
-#### Component 3
-
-Explain the third component and its role within the project.
-
-### Images
-
-Include images to help visualize your project's architecture. Two images will be displayed side by side, and one image will be displayed separately.
-
-#### Image 1
-
-![Image 1 Description](image1.jpg)
-
-#### Image 2
-
-![Image 2 Description](image2.jpg)
-
-#### Image 3
-
-![Image 3 Description](image3.jpg)
-
-## Usage
-
-Provide instructions on how to use your project or any relevant code snippets.
-
-## Installation
-
-Explain how to install your project, including any dependencies and setup instructions.
-
-## Contributing
-
-Provide guidelines for contributing to your project, including how to report issues or submit pull requests.
-
-## License
-
-Specify the license under which your project is distributed. For example:
-
-This project is licensed under the [MIT License](LICENSE).
+<div style="display: flex; justify-content: space-between;">
+  <img src="image1.jpg" alt="Image 1" width="48%">
+  <img src="image2.jpg" alt="Image 2" width="48%">
+</div>
 
