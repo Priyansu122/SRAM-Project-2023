@@ -6,7 +6,7 @@
 
 ## Table of Contents
 
-- [Introduction](#Introduction)
+- [Introduction](#introduction)
 - [Architecture](#architecture)
   - [Components](#components)
     - [Component 1](#component-1)
@@ -18,7 +18,7 @@
 - [Contributing](#contributing)
 - [License](#license)
 
-## Introduction
+## Introduction {#introduction}
 
 ### SRAM :
 Static Random Access Memory, commonly known as SRAM, is a fundamental type of semiconductor memory used extensively in modern digital electronic systems. Unlike dynamic RAM (DRAM), which requires periodic refreshing, SRAM is static in nature, meaning it holds data as long as power is supplied.
@@ -92,7 +92,12 @@ In this section, Various components of projects are explained and realted equati
   <img src="image1.jpg" alt="Image 1" width="48%">
   <img src="image2.jpg" alt="Image 2" width="48%">
 </div>
--     
+- In the simulation word line is always ON.
+- Here we have considered that the node s2 has 1 i.e the node voltage is vdd.
+- At this time M3 and M5 is activated and from the other side M2 and M4 is activated.
+- When the BL is at vdd the node s2 is also at vdd but when BL is discharged to 0 the s2 node voltage also discharges.
+- When BL node is completely discharged to 0 at that time the s2 node voltage` is at around 100mv or 0.1V.
+- From this information we can conclude that 0 has been written in the node s2.
 
 
 
