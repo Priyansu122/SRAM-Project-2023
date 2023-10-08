@@ -66,9 +66,34 @@ In this section, Various components of projects are explained and realted equati
 - Thats why we try to keep the node S2 voltage around 0.3 i.e less than the threashold now how can we do that for that we have modify the sizing of two NMOS i.e
   M1 and M3 and because SRAM is a symmetric structure M2 and M4 will also have the same size.
 
+##### write operation :
+- In write operation, first we will precharge both the nodes to vdd .
+- As we have discussed earlier we know that node s2 have 0 in it and s1 have 1 now we want to say write 1 to node s2.
+- After precharge the write driver will be connected to the BL and BLB line as we want to write 1 in the s2 node data 1 i.e vdd will be connected to BL line as it is already precharged
+  to vdd so there will no change in voltage for the BL line but the BLB line will be connected to data bar i.e 0 in this case so BLB line will be dischjarged to zero.
+- Then WL=1, so that the data in BL and BLB line can be stored in the internal node of the sram i.e s2 and s1 in this case.
+  
 <figure>
 <img src="./images/6T%20sram_page-0001.jpg" alt="SRAM transistor sizing calculation" title="Figure 3" height="500" width="700">
 </figure>
+
+- As shown above from equations we have estimated the sizes of noms and pmos in 6T sram.
+- Using that size we have build testbenchs in **cadence virtuso schematic editor tool**.
+
+**read simulation result**
+<div style="display: flex; justify-content: space-between;">
+  <img src="image1.jpg" alt="Image 1" width="48%">
+  <img src="image2.jpg" alt="Image 2" width="48%">
+</div>
+- From the graph we can see that the Vbl = 1.8 that is the vdd the node volatge of sram is around 0.3 V which indicates that during read operation it cannot exceed the volatge 0.3V.
+
+**Write simulation result**
+<div style="display: flex; justify-content: space-between;">
+  <img src="image1.jpg" alt="Image 1" width="48%">
+  <img src="image2.jpg" alt="Image 2" width="48%">
+</div>
+-     
+
 
 
 
