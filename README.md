@@ -25,8 +25,8 @@ Applications of SRAM include serving as cache memory in microprocessors, providi
 
 ## Architecture
 <figure>
-<figcaption>Figure 1: Architecture of 16 byte SRAM</figcaption>
-<img src="./images/architecture%20sram%20project_page-0001.jpg" alt="Architecture_SRAM" title="Figure 1" height="650" width="3000">
+<figcaption>Figure 1: Architecture of 16 byte SRAM</figcaption>/images/arc.JPG.jpg
+<img src="https://github.com/Priyansu122/VLSI-COURSE-2022/blob/branch1/images/arc.JPG.jpg" alt="Architecture_SRAM" title="Figure 1" height="650" width="3000">
 </figure>
 
 
