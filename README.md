@@ -92,6 +92,7 @@ In this section, Various components of projects are explained and realted equati
   <img src="image1.jpg" alt="Image 1" width="48%">
   <img src="image2.jpg" alt="Image 2" width="48%">
 </div>
+
 - In the simulation word line is always ON.
 - Here we have considered that the node s2 has 1 i.e the node voltage is vdd.
 - At this time M3 and M5 is activated and from the other side M2 and M4 is activated.
