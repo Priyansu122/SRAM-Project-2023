@@ -95,7 +95,9 @@ In this section, Various components of projects are explained and realted equati
 - Then WL=1, so that the data in BL and BLB line can be stored in the internal node of the sram i.e s2 and s1 in this case.
   
 <figure>
-<img src="./images/6T%20sram_page-0001.jpg" alt="SRAM transistor sizing calculation" title="Figure 3" height="500" width="700">
+    <figcaption>Trnasistor sizing calculation in SRAM</figcaption>
+<img src="./images/readcal.jpg" alt="SRAM transistor sizing calculation" title="Figure 3" height="1000" width="1000">
+<img src="./images/readcal2.jpg" alt="SRAM transistor sizing calculation" title="Figure 3" height="1000" width="1000">
 </figure>
 
 - As shown above from equations we have estimated the sizes of noms and pmos in 6T sram.
@@ -149,9 +151,11 @@ In this section, Various components of projects are explained and realted equati
 - The application of sense amplifier here is to sense the small differential voltage between BL and BLB node and read the data as 0 or 1.
 - This is basically used for making the reading process faster.
 - Because we are precharging the BL and BLB node so we are going use a NMOS based sense amplifier i.e the BL and BLB will be connected to gates of NMOS that are signal transistors.
+<figure>
+<figcaption>Figure 8: SENSE AMPLIFIER</figcaption>
+<img src="./images/SenseAmp.png" alt="Sense Amplifier" title="Figure 7" height="700" width="1200">
 
-<div style="display: flex; justify-content: space-between;">
-  <img src="image1.jpg" alt="Image 1" width="48%">
-  <img src="image2.jpg" alt="Image 2" width="48%">
-</div>
+</figure>
+
+
 
