@@ -12,6 +12,7 @@
     - [Precharge_circuit](#Precharge_circuit)
     - [Write_driver](#Write_driver)
     - [6T_SRAM](#6T_SRAM)
+    - [Row_decoder](#Row_decoder)
     - [Sense_Amplifier](#Sense_Amplifier)
 
 ## Introduction
@@ -93,12 +94,9 @@ In this section, Various components of projects are explained and realted equati
 - After precharge the write driver will be connected to the BL and BLB line as we want to write 1 in the s2 node data 1 i.e vdd will be connected to BL line as it is already precharged
   to vdd so there will no change in voltage for the BL line but the BLB line will be connected to data bar i.e 0 in this case so BLB line will be dischjarged to zero.
 - Then WL=1, so that the data in BL and BLB line can be stored in the internal node of the sram i.e s2 and s1 in this case.
-  
-<figure>
-    <figcaption>Trnasistor sizing calculation in SRAM</figcaption>
-<img src="./images/readcal.jpg" alt="SRAM transistor sizing calculation" title="Figure 3" height="1000" width="1000">
-<img src="./images/readcal2.jpg" alt="SRAM transistor sizing calculation" title="Figure 3" height="1000" width="1000">
-</figure>
+
+- For detailed calculation of Transistor sizing in **SRAM DESIGN** refer the pdf attached in the link :
+  [Sram Sizing calculation](https://github.com/Priyansu122/VLSI-COURSE-2022/blob/branch1/images/SRAM%20SIZE%20CALCULATION.pdf)
 
 - As shown above from equations we have estimated the sizes of noms and pmos in 6T sram.
 - Using that size we have build testbenchs in **cadence virtuso schematic editor tool**.
@@ -142,7 +140,15 @@ In this section, Various components of projects are explained and realted equati
 <figure>
 <figcaption>Figure 7: SRAM STATIC NOISE MARGINE</figcaption>
 <img src="./images/sramsnm.png" alt="Read simulation" title="Figure 4" height="600" width="1200">
+</figure>
 
+### Row_decoder
+- As we have discussed earlier we have designed 16 byte memory i.e we have 16 rows storing 1 byte each and at a time we can access 1 byte memory only for read or write operation.
+- So this a 4:16 decoder which will take address as input and select the row in which the data is to be stored.
+- The schematic of the decoder is shown below.
+<figure>
+<figcaption>Figure 8: ROW DECODER</figcaption>
+<img src="./images/Rowdec.png" alt="ROW DECODER" title="Figure 8" height="600" width="1200">
 </figure>
 
 
