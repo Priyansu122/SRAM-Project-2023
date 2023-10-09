@@ -26,7 +26,7 @@ Applications of SRAM include serving as cache memory in microprocessors, providi
 ## Architecture
 
 <figure>
-<figcaption>Figure 1: Architecture of 16 byte SRAM</figcaption>/images/arc.JPG.jpg
+<figcaption>Figure 1: Architecture of 16 byte SRAM</figcaption>
 <img src="https://github.com/Priyansu122/VLSI-COURSE-2022/blob/branch1/images/arc.jpg" alt="Architecture_SRAM" title="Figure 1" height="650" width="3000">
 </figure>
 
@@ -40,7 +40,7 @@ In this section, Various components of projects are explained and realted equati
 - The middle PMOS is basically the equallizer transistor whose purpose is to equallize the BL and BLB line during precharge period.
 <figure>
 <figcaption>Figure 2: Precharge Circuit</figcaption>
-<img src="./images/precharge.png" alt="Precharge circuit" title="Figure 2" height="500" width="700">
+<img src="./images/precharge.png" alt="Precharge circuit" title="Figure 2" height="400" width="700">
 </figure>
 
 ### Write_driver
@@ -48,8 +48,8 @@ In this section, Various components of projects are explained and realted equati
 - This will be controlled by the ctrl i.e control signal and rwn signal.
 - When ctrl = 1 and rwn = 0 at that time only the write operation will be there.
 <figure>
-<figcaption>Figure 2: Precharge Circuit</figcaption>
-<img src="./images/6T%20sram_page-0001.jpg" alt="6T SRAM" title="Figure 2" height="500" width="700">
+<figcaption>Figure 3:Write driver </figcaption>
+<img src="./images/writedriver.png" alt="Write driver" title="Figure 3" height="500" width="1000">
 </figure>
 
 - In the scematic, we are using two Pass transistors one for BL and one for BLB.
@@ -61,11 +61,11 @@ In this section, Various components of projects are explained and realted equati
 
 ### 6T_SRAM
 <figure>
-<figcaption>Figure 3: 6T SRAM</figcaption>
-<img src="./images/6T%20sram_page-0001.jpg" alt="6T SRAM" title="Figure 2" height="500" width="700">
+<figcaption>Figure 4: 6T SRAM</figcaption>
+<img src="./images/sram.jpg" alt="6T SRAM" title="Figure 4" height="500" width="700">
 </figure>
 
-- The above fingure i.e figure 2 shows the classic structure of a 6T sram which can store one bit data.
+- The above fingure i.e figure 4 shows the classic structure of a 6T sram which can store one bit data.
 - These are basically two back to back inverter with access transistor i.e M3 and M5.
 - Since there are two back to back inverter structure is there till the time the vdd and ground supply is there for inverter the data will not change.
 #### Operation :
@@ -102,17 +102,27 @@ In this section, Various components of projects are explained and realted equati
 - Using that size we have build testbenchs in **cadence virtuso schematic editor tool**.
 
 **read simulation result**
+<!--- 
 <div style="display: flex; justify-content: space-between;">
-  <img src="image1.jpg" alt="Image 1" width="48%">
-  <img src="image2.jpg" alt="Image 2" width="48%">
+  <img src="./images/readopcir.png" alt="Image 1" width="48%">
+  <img src="./images/readopgr.png" alt="Image 2" width="48%">
 </div>
+--->
+<figure>
+<figcaption>Figure 4: Read simulation testbench</figcaption>
+<img src="./images/readopcir.png" alt="Read simulation" title="Figure 4" height="600" width="1000">
+<img src="./images/readopgr.png" alt="Read result" title="Figure 4" height="600" width="1000">
+</figure>
+
 - From the graph we can see that the Vbl = 1.8 that is the vdd the node volatge of sram is around 0.3 V which indicates that during read operation it cannot exceed the volatge 0.3V.
 
 **Write simulation result**
-<div style="display: flex; justify-content: space-between;">
-  <img src="image1.jpg" alt="Image 1" width="48%">
-  <img src="image2.jpg" alt="Image 2" width="48%">
-</div>
+<figure>
+<figcaption>Figure 5: Write simulation testbench</figcaption>
+<img src="./images/writeopcir.png" alt="Read simulation" title="Figure 4" height="600" width="1000">
+<img src="./images/writeopgr.png" alt="Read result" title="Figure 4" height="600" width="1000">
+</figure>
+
 
 - In the simulation word line is always ON.
 - Here we have considered that the node s2 has 1 i.e the node voltage is vdd.
@@ -127,10 +137,12 @@ In this section, Various components of projects are explained and realted equati
 - In SRAM design, a higher SNM is crucial because it ensures that data remains intact even in the presence of electrical disturbances. It's a key factor in making SRAM memory cells stable and dependable for storing information.
 - Since SRAM cell is basically a back to back inverter structure and is a symmetrical design, we can use butterfly structure and square fitting to find out SNM.
   
-<div style="display: flex; justify-content: space-between;">
-  <img src="image1.jpg" alt="Image 1" width="48%">
-  <img src="image2.jpg" alt="Image 2" width="48%">
-</div>
+<figure>
+<figcaption>Figure 7: SRAM STATIC NOISE MARGINE</figcaption>
+<img src="./images/sramsnm.png" alt="Read simulation" title="Figure 4" height="600" width="1200">
+
+</figure>
+
 
 ### Sense_Amplifier
 - It is basically a differential amplifier which is used here during read operation.
