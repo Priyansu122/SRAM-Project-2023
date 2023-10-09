@@ -40,7 +40,7 @@ In this section, Various components of projects are explained and realted equati
 - The middle PMOS is basically the equallizer transistor whose purpose is to equallize the BL and BLB line during precharge period.
 <figure>
 <figcaption>Figure 2: Precharge Circuit</figcaption>
-<img src="./images/6T%20sram_page-0001.jpg" alt="6T SRAM" title="Figure 2" height="500" width="700">
+<img src="./images/precharge.png" alt="Precharge circuit" title="Figure 2" height="500" width="700">
 </figure>
 
 ### Write_driver
