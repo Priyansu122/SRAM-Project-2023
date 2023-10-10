@@ -60,9 +60,20 @@ In this section, Various components of projects are explained in detail and real
 <figcaption>Figure 2: Precharge Circuit</figcaption>
 <img src="./images/precharge.png" alt="Precharge circuit" title="Figure 2" height="400" width="700">
 </figure>
-- Preharge circuit is basically used to chrge the BL and BLB node to vdd before write and read operation.
+
+- Preharge circuit is basically used to charge the BL and BLB node to vdd before write and read operation.
 - When PC = 0, at that time the PMOS will be ON and it will charge the BL and BLB to vdd.
-- The Meq i.e shown in figure-2 is basically the equallizer transistor whose purpose is to equallize the BL and BLB line during precharge period.
+- The Meq i.e shown in figure 2 is basically the equallizer transistor whose purpose is to equallize the BL and BLB line during precharge period.
+- As discussed earlier, we have a large parasistic capacitance on BL node i.e Cpar. Now PMOS in the Precharge has to be that large so that it can charge the capacitance in less time.
+- The Access transistor SRAM has W = 250nm and L=180nm.
+
+![image](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/a32c4aaf-6599-440b-aa6f-da3495f134b7)
+
+
+- Where,
+         1. Wp = Width of M1, M2 i.e Precharge circuit PMOS
+- In this calucation 250nm is multiplied by 16 becuase there are 16 access transistors in a column and the Cper is the overall capacitance because of all access transistor. 
+ 
 
 ### Write_driver
 - The write driver is used to drive the data to the BL and data' to BLB node.
