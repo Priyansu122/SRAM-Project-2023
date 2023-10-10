@@ -61,10 +61,22 @@ In this section, Various components of projects are explained and realted equati
 
 
 ### 6T_SRAM
+<div align = "center">
 <figure>
-<figcaption>Figure 4: 6T SRAM</figcaption>
-<img src="./images/SRAM.png" alt="6T SRAM" title="Figure 4" height="500" width="700">
+    <img src="./images/SRAM.png" alt="6T SRAM" title="Figure 4" height="500" width="700" align="center">
 </figure>
+<p></p>
+<p><b>Figure 4: 6T SRAM</b></p>
+</div>
+
+<!--<table align="center">
+  <tr>
+    <td align="center">
+      <img src="./images/SRAM.png" alt="6T SRAM" title="Figure 4" height="500" width="700">
+    </td>
+  </tr>
+</table>-->
+
 
 - The above fingure i.e figure 4 shows the classic structure of a 6T sram which can store one bit data.
 - These are basically two back to back inverter with access transistor i.e M3 and M5.
@@ -111,7 +123,7 @@ In this section, Various components of projects are explained and realted equati
 <figure>
 <figcaption>Figure 4: Read simulation testbench</figcaption>
 <img src="./images/readopcir.png" alt="Read simulation" title="Figure 4" height="600" width="1000">
-<img src="./images/readopgr.png" alt="Read result" title="Figure 4" height="600" width="1000">
+<img src="./images/readopgr.jpg" alt="Read result" title="Figure 4" height="600" width="1000">
 </figure>
 
 - From the graph we can see that the Vbl = 1.8 that is the vdd the node volatge of sram is around 0.3 V which indicates that during read operation it cannot exceed the volatge 0.3V.
