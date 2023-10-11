@@ -226,51 +226,55 @@ In this section, Various components of projects are explained in detail and real
 - This is basically used for making the reading process faster.
 - Because we are precharging the BL and BLB node so we are going use a NMOS based sense amplifier i.e the BL and BLB will be connected to gates of NMOS that are signal transistors.
 <figure>
-<img src="./images/SenseAmp.png" alt="Sense Amplifier" title="Figure 7" height="700" width="1200">
+<img src="./images/SenseAmp.png" alt="Sense Amplifier" title="Figure 7" height="500" width="1200">
     <p align="center">Figure 10: SENSE AMPLIFIER</p> 
 </figure>
 
 #### Working Principle :
-- In the above sense Amplifier design there are two current mirrors i.e M1,M2 and M5,M6.
+- In the above sense Amplifier design there are two current mirrors i.e M0,M5 and M3,M4.
 - In this circuit when BL and BLB will be at vdd at that time the node voltage will be at 999mv.
 - Then a buffer is there connected to the node or output of the sense amplifier.
 - The first inverter of the buffer i.e inv1 is designed in such a way that when the input of that inverter will be at 999mv at that time the output will be around 900mv then depending on the sizing of the next inverter the final output is decided.
 - For ideal condition i.e when BL = BLB = 1.8V i.e vdd
-      - I1 = I2 = 1uA
-      - I5 = I6 = 0.5uA
+      - I0 = I5 = 1uA
+      - I3 = I4 = 0.5uA
       - node voltage = 999mv
 
 **zero read operation**
-- When BLB is stable at vdd but BL node dischages at that time the gate voltage of M3 reduces which implies decrease in I3 since M3 and M5 are in same branch so I3 = I5
-- M5 and M6 are in current mirror so current flowing in M5 will be replicated in M6 also hence I3 = I5 = I6
-- suppose initially the I3 is decresed by a factor of &Delta;I i.e I3(new) = I3 - &Delta;I
-- Now since BLB is not changed and it is stable at vdd thats why current acorss the M4 will not change.
+- When BLB is stable at vdd but BL node dischages at that time the gate voltage of M1 reduces which implies decrease in I1, say by a factor of &Delta;I.
+      - I1 = I1(old) - &Delta;I
+- since M1 and M3 are in same branch so I3 = I1.
+- M3 and M4 are in current mirror so current flowing in M3 will be replicated in M4 also hence I4 = I3 = I1
+- Now since BLB is not changed and it is stable at vdd thats why current acorss the M2 will not change.
 - So the extra amount of current will come from Node i.e the intrinsic capcacitance as shown in figure will discharge.
-- That extra amount of current will be termed as Ir0 and we can write **Ir0 = &Delta;I**
-- Now as the node will discharge its voltage will come down from 999mv then the inv1 output will charge to vdd hence finally the inv2 output will be moved to logic 0 and 0 is being read.
-- Similarly one read operation will occure.
+- That extra amount of current will be termed as Ir0 and we can write :
+     - **Ir0 = &Delta;I**
+- Now as the node will discharge its voltage will come down from 999mv then the INV1 output will charge to vdd hence finally the INV2 output will be moved to logic 0 and 0 is being read.
+- Similarly logic 1 read operation will occure just here the difference will be for reading logic 1 node BLB will discharge and BL will be stable at its voltage.
 
 **Design of Sense Amplifier**
 - The design of sense amplifier started with the designing of two current mirrors.
 - For a transistor to be in stauration its gm/Id ration should be between [4,10].
-- Hence after the design of the current mirrors we have preapared a testbench and done DC simulation we have started wih a value i.e gm/Id = 7.5.
+- Hence after the design of the current mirrors we have preapared a testbench and done DC simulation we have started wih a value i.e 'gm/Id = 7.5'
 - After completion of entire circuit now again we have done DC simulation and found out the node voltage is 999mv.
 - Then the next parameter to focus on was 'gain'.
-- Gain = gm*ro
-    - Where gm = transconductance of transistor M3
-            ro = output resistance (Rm4 || Rm6)
-    
+
+- Gain = gm&times;ro
+    - Where,
+        - gm = transconductance of transistor M1
+        - ro = output resistance (Rm4 || Rm6)
+         
 - We have observed that :
-    - When we are incresing the width of M3 its gain is increasing but after a certain value its gain started decreasing so its gain wrt width is like a bell curve.
-    - Again when we are incresing the width of M5 at that time the gain is increasing but we cannot increase that much because we have to also take care of gm/Id should be less than or equal to 10 for the transistor M5 eing in saturation.
-    - A point to note here is width of M1 is same to M2, M3 is same to M4 and M5 is same to M6.
+    - When we are incresing the width of M1 its gain is increasing but after a certain value its gain started decreasing so its gain Vs width grpah is like a bell curve.
+    - Again when we are incresing the width of M3 at that time the gain is increasing but we cannot increase that much because we have to also take care of gm/Id should be less than or equal to 10 for the transistor M3 being in saturation.
+    - A point to note here is width of M1 is same to M2, M3 is same to M4 and M5 is same to M0.
     - Hence in this way the sizes of the transistors are decided and to verify the gain we were doing AC analysis.
       
 **AC ANALYSIS RESULT**
 
 <figure>
-<figcaption>Figure 8: SENSE AMPLIFIER</figcaption>
-<img src="./images/ac.png" alt="AC ANALYSIS RESULT" title="Figure 8" height="700" width="1200">
+    <img src="./images/GainSA.png" alt="AC ANALYSIS RESULT" title="Figure 8" height="700" width="1200">
+    <p align="center">Figure 8: SENSE AMPLIFIER</p>
 </figure>
 
 - After AC analysis we will design INV1 .
