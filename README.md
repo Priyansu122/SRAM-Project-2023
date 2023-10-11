@@ -177,6 +177,8 @@ In this section, Various components of projects are explained in detail and real
 
 **Write simulation**
 
+![image](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/83b5aa91-47f6-476d-b1cf-3e1bbfad51b7)
+
 - Here we have considered that the node N1 has logic 1 i.e the node voltage is vdd.
 - At this time M3 and M5 is activated and from the other side M2 and M4 is activated.
 - When the BL is at vdd the node N1 is also at vdd. After that when ctrl = 1 and rwn = 0 at that time write driver will be connected to BL and BLB line
