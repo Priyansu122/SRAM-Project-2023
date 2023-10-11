@@ -114,7 +114,7 @@ In this section, Various components of projects are explained in detail and real
 
 
 - The above fingure i.e figure 4 shows the classic structure of a 6T sram which can store one bit data.
-- These are basically two back to back inverter with access transistor i.e M3 and M5.
+- These are basically two back to back inverter with access transistor i.e M3 and M4.
 - Since there are two back to back inverter structure is there till the time the vdd and ground supply is there for inverter the data will not change.
 #### Operation :
 - There are basically 3 modes of opeartion,
@@ -122,31 +122,36 @@ In this section, Various components of projects are explained in detail and real
      - write operation
      - hold operation
 - In read and write operation WL (Word line) = 1 and in hold operation WL = 0
-- Word line will be controlled by a signal called control and decoder output that will be discussed later.
+- Word line will be controlled by a signal called control and row decoder output, which will be discussed later.
 - read write operation will be controlled by  signal rwn and  control as shown in figure 1 i.e SRAM architecture.
 ##### read operation :
 - in read operation first the bit line (BL) and bit line bar (BLB) node will be charged to vdd.
-- Then the WL = 1, in figure 2 suppose node S2 is at vdd and S1 is at zero i.e we can say that we have stored a one in sram cell when we will make WL = 1 then
-  BLB node is at vdd and s1 node is at vdd then there will be no change there where as in the other side BL node is at vdd and s2 is at 0 and M1 is also ON
-  hence BL node will try to discharge through that path of M3 and M1.In this way BLB node is stable and BL node is going down which is a indication that we are
-  reading zero similarly while reading one BL node will be stable at logic 1 where as BLB node will be dischagred gradually.
-- Now BL node will be discharged and it will charge S2 node and if S2 node will be charged to same or more than threshold voltage then the NMOS on the other side 
-  i.e M2 will be ON it may toggle the data stored even if it will not toggle there will be a unneccesary current flow since NMOS is on and thats a power loss.
-- Thats why we try to keep the node S2 voltage around 0.3 i.e less than the threashold now how can we do that for that we have modify the sizing of two NMOS i.e
+- Then PC=1 i.e Precharge will be turned OFF, in figure 2 suppose node N1 is at vdd and N2 is at zero i.e we can say that we have stored a logic 1 in sram cell previously.
+- When we will make WL = 1 then, 
+  BL node is at vdd and N1 is at also at vdd then there will be no change in BL where as BLB node is at vdd but N2 is at logic 0 and M1 is also ON
+  hence BLB node will try to discharge i.e the Parasitic Cap at BLB node Cpar will discharge through that path of M3 and M1.
+- In this way BL node is stable and BLB node is going down which is a indication that we are reading logic 1 similarly while reading logic 0 BLB node will be stable at logic 1 where as BL node will be  dischagred gradually.
+- During read operation there is a problem that we can face that is :
+   - While reading logic 0 BL node will be discharged and it will charge N1 node and if N1 node will be charged to same or more than threshold voltage then the NMOS on the other side 
+  i.e M2 will be ON it may toggle the data stored even if it will not toggle there will be a unneccesary current flow since NMOS is on and that is a power loss.
+   - Thats why we try to keep the node N1 voltage around 0.3 V i.e less than the threashold now how can we do that for that we have to modify the sizing of two NMOS i.e
   M1 and M3 and because SRAM is a symmetric structure M2 and M4 will also have the same size.
 
 ##### write operation :
-- In write operation, first we will precharge both the nodes to vdd .
-- As we have discussed earlier we know that node s2 have 0 in it and s1 have 1 now we want to say write 1 to node s2.
-- After precharge the write driver will be connected to the BL and BLB line as we want to write 1 in the s2 node data 1 i.e vdd will be connected to BL line as it is already precharged
-  to vdd so there will no change in voltage for the BL line but the BLB line will be connected to data bar i.e 0 in this case so BLB line will be dischjarged to zero.
-- Then WL=1, so that the data in BL and BLB line can be stored in the internal node of the sram i.e s2 and s1 in this case.
 
+- In write operation, first we will precharge both the nodes to vdd .
+- Suppose node N1 is at logic 0 and N2 is at logic 1, now we want to say write logic 1 to node N1.
+- After precharge, we will make PC = 1 and then when Ctrl = 1 and rwn = 0 at that time the write driver will be connected to the BL and BLB line.
+- Data line will be connected to BL where as Data' line will be connected to BLB.
+- As we want to write one the BL line will at logic 1 and the BLB line will be at logic 0.
+- Then WL=1, so that the data in BL and BLB line can be stored in the internal node of the sram i.e N1 and N2 in this case.
+  
+**SRAM design**
 - For detailed calculation of Transistor sizing in **SRAM DESIGN** refer the pdf attached in the link :
   [Sram Sizing calculation](https://github.com/Priyansu122/VLSI-COURSE-2022/blob/branch1/images/SRAM%20SIZE%20CALCULATION.pdf)
+- From the above, we have got a rough estimation of the sizes of transistors in 6T SRAM.
+- We have kept all transistor W = 250nm and L = 180nm and using this sizings we have build designs and testbenchs in **cadence virtuso schematic editor tool**.
 
-- As shown above from equations we have estimated the sizes of noms and pmos in 6T sram.
-- Using that size we have build testbenchs in **cadence virtuso schematic editor tool**.
 
 **read simulation result**
 <!--- 
