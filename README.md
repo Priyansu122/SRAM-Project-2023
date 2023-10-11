@@ -273,7 +273,7 @@ In this section, Various components of projects are explained in detail and real
 **AC ANALYSIS RESULT**
 
 <figure>
-    <img src="./images/GainSA.png" alt="AC ANALYSIS RESULT" title="Figure 8" height="700" width="1200">
+    <img src="./images/GainSA.jpg" alt="AC ANALYSIS RESULT" title="Figure 8" height="700" width="1200">
     <p align="center">Figure 8: SENSE AMPLIFIER</p>
 </figure>
 
