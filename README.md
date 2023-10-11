@@ -148,25 +148,30 @@ In this section, Various components of projects are explained in detail and real
   
 **SRAM design**
 - For detailed calculation of Transistor sizing in **SRAM DESIGN** refer the pdf attached in the link :
+  
   [Sram Sizing calculation](https://github.com/Priyansu122/VLSI-COURSE-2022/blob/branch1/images/SRAM%20SIZE%20CALCULATION.pdf)
 - From the above, we have got a rough estimation of the sizes of transistors in 6T SRAM.
 - We have kept all transistor W = 250nm and L = 180nm and using this sizings we have build designs and testbenchs in **cadence virtuso schematic editor tool**.
 
 
-**read simulation result**
+**Read simulation**
 <!--- 
 <div style="display: flex; justify-content: space-between;">
   <img src="./images/readopcir.png" alt="Image 1" width="48%">
   <img src="./images/readopgr.png" alt="Image 2" width="48%">
 </div>
 --->
+
+<img src="./images/readdetails.png" alt="Read Details" title="Figure 4" height="600" width="5000">
+  
 <figure>
-<figcaption>Figure 4: Read simulation testbench</figcaption>
+<!-- <figcaption>Figure 4: Read simulation testbench</figcaption> -->
 <img src="./images/readopcir.png" alt="Read simulation" title="Figure 4" height="600" width="1000">
+<p align="center">Figure 4: Read simulation testbench</p>
 <img src="./images/readopgr.jpg" alt="Read result" title="Figure 4" height="600" width="1000">
+<p align="center">Figure 5: Read simulation Result</p>
 </figure>
 
-- From the graph we can see that the Vbl = 1.8 that is the vdd the node volatge of sram is around 0.3 V which indicates that during read operation it cannot exceed the volatge 0.3V.
 
 **Write simulation result**
 <figure>
