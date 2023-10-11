@@ -67,22 +67,21 @@ In this section, Various components of projects are explained in detail and real
 - As discussed earlier, we have a large parasistic capacitance on BL node i.e Cpar. Now PMOS in the Precharge has to be that large so that it can charge the capacitance in less time.
 - The Access transistor SRAM has W = 250nm and L=180nm.
 
-![image](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/a32c4aaf-6599-440b-aa6f-da3495f134b7)
+![image](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/247e993a-def0-4d79-952d-cf6472b11588)
+
 
 
 - Where,
-         1. Wp = Width of M1, M2 i.e Precharge circuit PMOS
-- In this calucation 250nm is multiplied by 16 becuase there are 16 access transistors in a column and the Cper is the overall capacitance because of all access transistor. 
+          Wp = Width of M1, M2 i.e Precharge circuit PMOS
+- In this calucation 250nm is multiplied by 16 becuase there are 16 access transistors in a column and the Cper is the overall capacitance because of all access transistor.
+- Then it is divided by 4 to maintain stage ratio and then multiplied by 2 for &beta; ratio.
  
 
 ### Write_driver
 - The write driver is used to drive the data to the BL and data' to BLB node.
 - This will be controlled by the ctrl i.e control signal and rwn signal.
 - When ctrl = 1 and rwn = 0 at that time only the write operation will be there.
-<figure>
-<figcaption>Figure 3:Write driver </figcaption>
-<img src="./images/writedriver.png" alt="Write driver" title="Figure 3" height="500" width="1000">
-</figure>
+<img src="./images/writedriver.png" alt="Write driver" title="Figure 4" height="500" width="700" align="center">
 
 - In the scematic, we are using two Pass transistors one for BL and one for BLB.
 - Now we are using a nand gate to generate the control signal for write driver.
