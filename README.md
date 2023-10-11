@@ -189,9 +189,9 @@ In this section, Various components of projects are explained in detail and real
 
 
 <figure>
-<img src="./images/writeopcir.png" alt="Read simulation" title="Figure 4" height="600" width="1000">
+<img src="./images/writeopcir.png" alt="Read simulation" title="Figure 4" height="600" width="1500">
    <p align="center">Figure 6: Write simulation testbench</p>
-<img src="./images/writeopgr.png" alt="Read result" title="Figure 4" height="600" width="1000">
+<img src="./images/writeopgr.png" alt="Read result" title="Figure 4" height="600" width="1500">
     <p align="center">Figure 7: Write simulation Result</p>
 </figure>
 
@@ -203,17 +203,20 @@ In this section, Various components of projects are explained in detail and real
 - Since SRAM cell is basically a back to back inverter structure and is a symmetrical design, we can use butterfly structure and square fitting to find out SNM.
   
 <figure>
-<figcaption>Figure 7: SRAM STATIC NOISE MARGINE</figcaption>
+<!--<figcaption>Figure 7: SRAM STATIC NOISE MARGINE</figcaption>-->
 <img src="./images/sramsnm.png" alt="Read simulation" title="Figure 4" height="600" width="1200">
+<p align="center">Figure 8: SRAM STATIC NOISE MARGINE</p>
 </figure>
 
 ### Row_decoder
 - As we have discussed earlier we have designed 16 byte memory i.e we have 16 rows storing 1 byte each and at a time we can access 1 byte memory only for read or write operation.
-- So this a 4:16 decoder which will take address as input and select the row in which the data is to be stored.
+- So we have designed a 4:16 decoder which will take address as input and then decoders output will be given to a AND gate as input and another input of that gate is ctrl then the output of the AND gate will be given to Word line.
+- Now suppose the adress is 0000 then dec<0> will be 1 and and other decoder output will be 0 then only the 0th row of SRAM cells will be selected and there wordline will ON depending on ctrl signal.
 - The schematic of the decoder is shown below.
 <figure>
-<figcaption>Figure 8: ROW DECODER</figcaption>
+<!--<figcaption>Figure 8: ROW DECODER</figcaption>-->
 <img src="./images/Rowdec.png" alt="ROW DECODER" title="Figure 8" height="600" width="1200">
+    <p align="center">Figure 9: ROW DECODER</p>
 </figure>
 
 
