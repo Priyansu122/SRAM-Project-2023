@@ -162,8 +162,9 @@ In this section, Various components of projects are explained in detail and real
 </div>
 --->
 
-<img src="./images/readdetails.png" alt="Read Details" title="Figure 4" height="600" width="5000">
-  
+<img src="./images/readdetails.png" alt="Read Details" title="Figure 4" height="500" width="10000">
+
+
 <figure>
 <!-- <figcaption>Figure 4: Read simulation testbench</figcaption> -->
 <img src="./images/readopcir.png" alt="Read simulation" title="Figure 4" height="600" width="1000">
