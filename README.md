@@ -162,7 +162,8 @@ In this section, Various components of projects are explained in detail and real
 </div>
 --->
 
-<img src="./images/readdetails.png" alt="Read Details" title="Figure 4" height="500" width="10000">
+![Screenshot from 2023-10-11 15-44-32](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/52a51953-bd00-4bcb-835f-a45b70b4b385)
+
 
 
 <figure>
@@ -174,20 +175,26 @@ In this section, Various components of projects are explained in detail and real
 </figure>
 
 
-**Write simulation result**
+**Write simulation**
+
+- Here we have considered that the node N1 has logic 1 i.e the node voltage is vdd.
+- At this time M3 and M5 is activated and from the other side M2 and M4 is activated.
+- When the BL is at vdd the node N1 is also at vdd. After that when ctrl = 1 and rwn = 0 at that time write driver will be connected to BL and BLB line
+  Since we want to write zero so BL node will be at 0V and also since WL will be controlled by ctrl signal as discussed in Architecture WL = 1.
+- Then there will be path through M5 and M3 transistors like current will flow from N1 to BL node through M3 and from vdd to N1 through M5.
+- So to observe this we have set up testbench in which we are keeping WL always ON and we are varying BL from 1.8V to 0V and we observed that :
+  
+    - When BL node is at logic 0 at that time the N1 node voltage`is at around 100mv or 0.1V.
+    - Since our SNM for SRAM cell is 0.6V we can say that the zero has been written at N1.
+
+
 <figure>
-<figcaption>Figure 5: Write simulation testbench</figcaption>
 <img src="./images/writeopcir.png" alt="Read simulation" title="Figure 4" height="600" width="1000">
+   <p align="center">Figure 6: Write simulation testbench</p>
 <img src="./images/writeopgr.png" alt="Read result" title="Figure 4" height="600" width="1000">
+    <p align="center">Figure 7: Write simulation Result</p>
 </figure>
 
-
-- In the simulation word line is always ON.
-- Here we have considered that the node s2 has 1 i.e the node voltage is vdd.
-- At this time M3 and M5 is activated and from the other side M2 and M4 is activated.
-- When the BL is at vdd the node s2 is also at vdd but when BL is discharged to 0 the s2 node voltage also discharges.
-- When BL node is completely discharged to 0 at that time the s2 node voltage` is at around 100mv or 0.1V.
-- From this information we can conclude that 0 has been written in the node s2.
 
 **SRAM SNM**
 - SNM stands for static noise margine.
