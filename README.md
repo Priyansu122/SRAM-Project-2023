@@ -81,7 +81,8 @@ In this section, Various components of projects are explained in detail and real
 - The write driver is used to drive the data to the BL and data' to BLB node.
 - This will be controlled by the ctrl i.e control signal and rwn signal.
 - When ctrl = 1 and rwn = 0 at that time only the write operation will be there.
-<img src="./images/writedriver.png" alt="Write driver" title="Figure 4" height="500" width="700" align="center">
+<img src="./images/writedriver.png" alt="Write driver" title="Figure 4" height="500" width="1000" align="center">
+<p align="center">Figure 4 : Write driver</p>
 
 - In the scematic, we are using two Pass transistors one for BL and one for BLB.
 - Now we are using a nand gate to generate the control signal for write driver.
@@ -96,7 +97,7 @@ In this section, Various components of projects are explained in detail and real
     <img src="./images/SRAM.png" alt="6T SRAM" title="Figure 4" height="500" width="700" align="center">
 </figure>
 <p></p>
-<p><b>Figure 4: 6T SRAM</b></p>
+<p>&nbsp;Figure 4: 6T SRAM</p>
 </div>
 
 <!--<table align="center">
