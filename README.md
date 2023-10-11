@@ -226,8 +226,8 @@ In this section, Various components of projects are explained in detail and real
 - This is basically used for making the reading process faster.
 - Because we are precharging the BL and BLB node so we are going use a NMOS based sense amplifier i.e the BL and BLB will be connected to gates of NMOS that are signal transistors.
 <figure>
-<figcaption>Figure 8: SENSE AMPLIFIER</figcaption>
 <img src="./images/SenseAmp.png" alt="Sense Amplifier" title="Figure 7" height="700" width="1200">
+    <p align="center">Figure 10: SENSE AMPLIFIER</p> 
 </figure>
 
 #### Working Principle :
