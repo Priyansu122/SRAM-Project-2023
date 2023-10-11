@@ -81,9 +81,13 @@ In this section, Various components of projects are explained in detail and real
 - The write driver is used to drive the data to the BL and data' to BLB node.
 - This will be controlled by the ctrl i.e control signal and rwn signal.
 - When ctrl = 1 and rwn = 0 at that time only the write operation will be there.
+- Now the question is what is the requiremnet of Write driver ?
 <img src="./images/writedriver.png" alt="Write driver" title="Figure 4" height="500" width="1000" align="center">
 <p align="center">Figure 4 : Write driver</p>
 
+  ![Screenshot from 2023-10-11 11-34-04](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/100b63b8-2861-4ed8-b649-9e52cee30a7f)
+  
+**Operation**
 - In the scematic, we are using two Pass transistors one for BL and one for BLB.
 - Now we are using a nand gate to generate the control signal for write driver.
 - The nand gate inputs are ctrl and rwn' when both will be 1 then there will be write operation so the output of nand gate i.e 0 will be used to control 
