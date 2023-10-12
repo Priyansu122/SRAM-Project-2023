@@ -284,7 +284,25 @@ In this section, Various components of projects are explained in detail and real
 - Then there is no restriction on INV2.
 - Now when BL or BLB will be discharged at that time the node vwill either go up or down the quickly the INV1 output will change then INV2 output will change.
 - The point to note here is when node voltage is changed by some voltage the output will go to logic 0 or 1 quicky which is very important for fast read response.
-- 
+
+  **Final sizing of Sense Amplifier**
+  |Transistor Name|Width per finger|Multiplier|Fingers|Length|
+  |---|---|---|---|---|
+  |M0 and M5|250nm|1|1|1um|
+  |M3 and M5|350nm|2|1|1um|
+  |M1 and M2|700nm|2|1|500nm|
+
+   **Final sizing of Buffer Network**
+  |Transistor Name|Width per finger|Multiplier|Fingers|Length|
+  |---|---|---|---|---|
+  |INV1 PMOS|930nm|6|1|180nm|
+  |INV1 NMOS|300nm|1|1|180nm|
+  |INV2 PMOS|930nm|6|1|180nm|
+  |INV2 NMOS|300nm|4|1|180nm|
+ 
+
+
+
 **Simulation Result of Sense Amplifier**
 <figure>
 <figcaption>Figure 8: SENSE AMPLIFIER</figcaption>
