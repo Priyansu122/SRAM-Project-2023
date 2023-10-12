@@ -338,8 +338,7 @@ In this section, Various components of projects are explained in detail and real
 
   <p><b>16 byte SRAM with all subcomponents</b></p>
 
-  ![Screenshot from 2023-10-12 15-40-51](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/2bb271ce-50d2-464c-85d4-72b0870b7e19)
-
+ ![Screenshot from 2023-10-06 17-59-35](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/e859b453-62cc-4841-8eab-b7bc687980fb)
 
   #### individual components :
   - 16 byte SRAM cell :
