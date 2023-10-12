@@ -233,6 +233,17 @@ In this section, Various components of projects are explained in detail and real
 </figure>
 
 #### Working Principle :
+- In the above sense Amplifier we have power down transistors i.e:
+    - Mnpd = Power down NMOS transistor
+    - Mppd = Power down PMOS transistor
+- These power down transistors are controlled by sa signal,
+    - if sa = 1 that implies sae = 0 and saen = 1 as per figure 7
+        - Now sae is the input of the Mppd and saen is the input of Mnpd, therefore both Mnpd and Mpnd will be ON.
+        - Becuase of that the sense amplifier will be turned OFF as M3,M4 and M0,M5 will be OFF.
+        - Node will be at logic 0 thats why the sense amplifier output will be at logic 0.
+        - Hence during this state the powerloss will not happen as the output is fixed at a point.
+        - For our project we have considered sense amp as alaways ON hence, sense amp output will be always equal to 0. 
+        
 - In the above sense Amplifier design there are two current mirrors i.e M0,M5 and M3,M4.
 - In this circuit when BL and BLB will be at vdd at that time the node voltage will be at 999mv.
 - Then a buffer is there connected to the node or output of the sense amplifier.
@@ -264,7 +275,7 @@ In this section, Various components of projects are explained in detail and real
 - Gain = gm&times;ro
     - Where,
         - gm = transconductance of transistor M1
-        - ro = output resistance (Rm4 || Rm6)
+        - ro = output resistance (Rm2 || Rm4)
          
 - We have observed that :
     - When we are incresing the width of M1 its gain is increasing but after a certain value its gain started decreasing so its gain Vs width grpah is like a bell curve.
