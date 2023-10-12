@@ -333,6 +333,21 @@ In this section, Various components of projects are explained in detail and real
 <p align="center">Figure 11: Transient Analysis Result</p>
 
 ### Design_and_testbench
+- Till now we have seen individual components of this project and got to know about there working principle and operations.In this section we are going to look at the overall design of the system
+  and testbech for that system.
+
+  <p><b>16 byte SRAM with all subcomponents</b></p>
+
+  ![Screenshot from 2023-10-12 15-40-51](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/2bb271ce-50d2-464c-85d4-72b0870b7e19)
+
+
+  #### individual components :
+  - 16 byte SRAM cell :
+      - Here we have we have kept 8 6T SRAM cell in a row and taken 16 instances of each cell.
+      - Precharge circuit is also attached 
+     
+
+  
   
 
   
