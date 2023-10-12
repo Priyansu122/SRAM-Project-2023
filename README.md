@@ -272,11 +272,18 @@ In this section, Various components of projects are explained in detail and real
     - A point to note here is width of M1 is same to M2, M3 is same to M4 and M5 is same to M0.
     - Hence in this way the sizes of the transistors are decided and to verify the gain we were doing AC analysis.
       
-**AC ANALYSIS RESULT**
-
 <figure>
-    <img src="./images/GainSA.jpg" alt="AC ANALYSIS RESULT" title="Figure 8" height="700" width="1200">
-    <p align="center">Figure 8: SENSE AMPLIFIER</p>
+    
+   ![SA design](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/0274f8c3-796e-4398-9579-769a7013d6d6)
+    <p align="center">Figure 8: SENSE AMPLIFIER Testbench</p>
+    <img src="./images/TestbenchSA.png" alt="SA testbech" title="Figure 8" height="500" width="1200">
+    <p align="center">Figure 9: SENSE AMPLIFIER Testbench</p>
+</figure>
+   
+**AC ANALYSIS RESULT**
+<figure>
+    <img src="./images/GainSA.jpg" alt="AC ANALYSIS RESULT" title="Figure 8" height="500" width="1200">
+    <p align="center">Figure 10: AC ANALYSIS RESULT</p>
 </figure>
 
 - After AC analysis we will design INV1 .
@@ -301,13 +308,18 @@ In this section, Various components of projects are explained in detail and real
   |INV2 NMOS|300nm|4|1|180nm|
  
 
+  **Simulation Result of Sense Amplifier**
+
+<!--<div style="display: flex; justify-content: space-between;">
+  <img src="./images/TestbenchSA.png" alt="Testbench" width="590" height="500">
+  <img src="./images/TranSA.png" alt="Transient response" width="590" height= "500">
+</div>-->
+<div style="display: flex; justify-content: space-between;">
+  <img src="./images/TranSA.png" alt="Transient response" width="1000" height= "500">
+</div>
 
 
-**Simulation Result of Sense Amplifier**
-<figure>
-<figcaption>Figure 8: SENSE AMPLIFIER</figcaption>
-<img src="./images/ac.png" alt="AC ANALYSIS RESULT" title="Figure 8" height="700" width="1200">
-</figure>
+<p align="center">Figure 11: Transient Analysis Result</p>
 
 ### Design_and_testbench
   
