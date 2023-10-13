@@ -56,10 +56,11 @@ Applications of SRAM include serving as cache memory in microprocessors, providi
 
 In this section, Various components of projects are explained in detail and realted equations, simulation results are mentioned.
 ### Precharge_circuit
-<figure>
-<figcaption>Figure 2: Precharge Circuit</figcaption>
-<img src="./images/precharge.png" alt="Precharge circuit" title="Figure 2" height="400" width="700">
-</figure>
+<div align="center">
+<!--<figcaption>Figure 2: Precharge Circuit</figcaption>-->
+<img src="./images/Precharge.png" alt="Precharge circuit" title="Figure 2" height="400" width="700">
+<p align="center">Figure 2: Precharge Circuit</p>
+</div>
 
 - Preharge circuit is basically used to charge the BL and BLB node to vdd before write and read operation.
 - When PC = 0, at that time the PMOS will be ON and it will charge the BL and BLB to vdd.
@@ -319,31 +320,31 @@ In this section, Various components of projects are explained in detail and real
   |INV2 NMOS|300nm|4|1|180nm|
  
 
-  **Simulation Result of Sense Amplifier**
-
-<!--<div style="display: flex; justify-content: space-between;">
-  <img src="./images/TestbenchSA.png" alt="Testbench" width="590" height="500">
-  <img src="./images/TranSA.png" alt="Transient response" width="590" height= "500">
-</div>-->
-<div style="display: flex; justify-content: space-between;">
-  <img src="./images/TranSA.png" alt="Transient response" width="1000" height= "500">
-</div>
-
-
-<p align="center">Figure 11: Transient Analysis Result</p>
-
 ### Design_and_testbench
-- Till now we have seen individual components of this project and got to know about there working principle and operations.In this section we are going to look at the overall design of the system
-  and testbech for that system.
+- Till now we have seen individual components of this project and got to know about there working principle and operations.In this section we are going to look at the the design, testbench and simulation result
+  for all the components and finally we are going to intergrate all of them together to build the entire system and respective testbench for that.
 
-  <p><b>16 byte SRAM with all subcomponents</b></p>
+  #### Precharge Circuit  :
 
- ![Screenshot from 2023-10-06 17-59-35](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/e859b453-62cc-4841-8eab-b7bc687980fb)
+  #### Write driver :
 
-  #### individual components :
-  - 16 byte SRAM cell :
-      - Here we have we have kept 8 6T SRAM cell in a row and taken 16 instances of each cell.
-      - Precharge circuit is also attached 
+  #### 6T SRAM :
+
+  #### Row decoder :
+
+  #### Design of the System
+
+  **16 byte SRAM**
+  **System explanation**
+  **Testbech**
+  **Operating condition**
+  **Result explanation**
+  **Write delay**
+  read delay
+  corner simulation result
+  how we have found out maximum frequncy to operate
+
+  ### Conclusion
      
 
   
