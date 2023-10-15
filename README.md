@@ -17,11 +17,11 @@
 
 ## Introduction
 
-### SRAM :
+### SRAM :  
+
 Static Random Access Memory, commonly known as SRAM, is a fundamental type of semiconductor memory used extensively in modern digital electronic systems. Unlike dynamic RAM (DRAM), which requires periodic refreshing, SRAM is static in nature, meaning it holds data as long as power is supplied.
 
 Applications of SRAM include serving as cache memory in microprocessors, providing high-speed storage for critical data and instructions, and acting as the primary memory in various embedded systems where fast and reliable access to data is essential. SRAM is favored for its fast read and write access times, making it a crucial component in optimizing the performance of various electronic devices.
-
 
 
 ## Architecture
@@ -38,17 +38,17 @@ Applications of SRAM include serving as cache memory in microprocessors, providi
    for each row there will a word line (WL) and for each colum there will a BL and BLB so in total there will be 16 WL and 8 BL and BLB.
 - 6T SRAM cells are designed using a back to back inverter and two access transistors, the design part will be discussed later.
 - 16 transistors in a row will lead to some parasitic capacitances that is refered as Cpar in the fiogure 1
-  
-### Operation
 
-- All the signals that are shown in the figure 1 are given parallely.
+#### Operation
+
+  - All the signals that are shown in the figure 1 are given parallely.
   
-- First PC will be given zero that will activate the precharge circuit the precharge circuit will basically chagrge the capacitors Cpar to vdd then if we want to write then PC will be high and ctrl signal will be turned ON 
+  - First PC will be given zero that will activate the precharge circuit the precharge circuit will basically chagrge the capacitors Cpar to vdd then if we want to write then PC will be high and ctrl signal will be turned ON 
  and rwn will be given as 0, by doing this the write driver will be actiavted and after that it will drive the data from input to the BL and BLB node. The adress data will be taken by the row decoder 
  and row decoder will select in which row to write.  Suppose the adress is 0000 then it will select the 0th  row for writing then when the control signal will be turned ON it will activate the WL signal 
  then the data will be written to SRAM and all these things will occur when the precharge signal is at high.A point to note is before each read or write there will be a precharge and when precharge is done after that only read or write operation can   be started. Now becuase of back to back inverters it will hold the data till the time the next data is not written in the same location.
 
-- Then if we want to read again we have to precharge and the BL and BLB node to vdd that means Cpar is fully charged. Then when pc = 0 and WL = 1 at that time the the data stored in the sram is 1 then the BLB
+   - Then if we want to read again we have to precharge and the BL and BLB node to vdd that means Cpar is fully charged. Then when pc = 0 and WL = 1 at that time the the data stored in the sram is 1 then the BLB
   node will come down and if the data stored in sram is 0 then the BL node will come down i.e the Cpar in the BL side wll discharge.Now the sense Amplifier two inputs are also connected to the BL and BLB line
   when any one node will go down it will sense the voltage difference between BL and BLB node and at the sense amplifier output we will get the data of sram that we have selected by giving its adress.
 
@@ -76,6 +76,15 @@ In this section, Various components of projects are explained in detail and real
           Wp = Width of M1, M2 i.e Precharge circuit PMOS
 - In this calucation 250nm is multiplied by 16 becuase there are 16 access transistors in a column and the Cper is the overall capacitance because of all access transistor.
 - Then it is divided by 4 to maintain stage ratio and then multiplied by 2 for &beta; ratio.
+
+#### Implementation
+  
+   <p></p>
+  <div align="center">
+  <img src="./images/cad_precharge.png" alt="Precharge circuit implementation" title="Figure 2" height="500" width="800">
+  <p></p>
+  <p align="center">Figure 3: Implementation of Precharge Circuit</p>
+  </div>
  
 
 ### Write_driver
@@ -93,7 +102,16 @@ In this section, Various components of projects are explained in detail and real
 - Now we are using a nand gate to generate the control signal for write driver.
 - The nand gate inputs are ctrl and rwn' when both will be 1 then there will be write operation so the output of nand gate i.e 0 will be used to control 
   the PMOS and the inverted signal i.e 1 will be used to control NMOS.
-- In other conditions the PMOS and NMOS will be at OFF state so nowrite at that time. 
+- In other conditions the PMOS and NMOS will be at OFF state so nowrite at that time.
+  
+#### Implementation
+  
+   <p></p>
+  <div align="center">
+  <img src="./images/cad_precharge.png" alt="Precharge circuit implementation" title="Figure 2" height="500" width="800">
+  <p></p>
+  <p align="center">Figure 5: Implementation of Write Driver</p>
+  </div>
 
 
 ### 6T_SRAM
