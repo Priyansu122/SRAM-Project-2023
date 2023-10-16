@@ -108,7 +108,7 @@ In this section, Various components of projects are explained in detail and real
   
    <p></p>
   <div align="center">
-  <img src="./images/cad_precharge.png" alt="Precharge circuit implementation" title="Figure 2" height="500" width="800">
+  <img src="./images/cad_writedriver.png" alt="Precharge circuit implementation" title="Figure 2" height="500" width="1200">
   <p></p>
   <p align="center">Figure 5: Implementation of Write Driver</p>
   </div>
@@ -172,15 +172,15 @@ In this section, Various components of projects are explained in detail and real
 - From the above, we have got a rough estimation of the sizes of transistors in 6T SRAM.
 - We have kept all transistor W = 250nm and L = 180nm and using this sizings we have build designs and testbenchs in **cadence virtuso schematic editor tool**.
 
+#### Implementation  
 
-**Read simulation**
+ **1. Read simulation**
 <!--- 
 <div style="display: flex; justify-content: space-between;">
   <img src="./images/readopcir.png" alt="Image 1" width="48%">
   <img src="./images/readopgr.png" alt="Image 2" width="48%">
 </div>
 --->
-
 ![Screenshot from 2023-10-11 15-44-32](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/52a51953-bd00-4bcb-835f-a45b70b4b385)
 
 
@@ -194,7 +194,7 @@ In this section, Various components of projects are explained in detail and real
 </figure>
 
 
-**Write simulation**
+**2. Write simulation**
 
 ![image](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/83b5aa91-47f6-476d-b1cf-3e1bbfad51b7)
 
@@ -217,7 +217,7 @@ In this section, Various components of projects are explained in detail and real
 </figure>
 
 
-**SRAM SNM**
+**3. SRAM SNM**
 - SNM stands for static noise margine.
 - In the case of SRAM, static noise margin (SNM) is a critical parameter that determines the stability and reliability of data storage. Imagine SRAM cells as tiny switches storing bits of information. SNM measures how much electrical noise these switches can withstand without causing data corruption.
 - In SRAM design, a higher SNM is crucial because it ensures that data remains intact even in the presence of electrical disturbances. It's a key factor in making SRAM memory cells stable and dependable for storing information.
@@ -240,6 +240,19 @@ In this section, Various components of projects are explained in detail and real
     <p align="center">Figure 9: ROW DECODER</p>
 </figure>
 
+#### Implementation
+
+![Screenshot from 2023-10-13 11-05-55](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/277282b5-6640-457f-9d2f-c259ea18618d)
+<p align="center">Figure 10: ROW DECODER IMPLEMENTATION</p>  
+
+![Screenshot from 2023-10-06 16-20-00](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/a9f03527-478a-46ac-86b8-f86de1317ca0)
+<p align="center">Figure 10: ROW DECODER Testbench</p>
+
+![Screenshot from 2023-10-06 16-31-06](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/fc6ce815-45ed-4007-9724-a2bccf5336c4)
+<p align="center">Figure 10: ROW DECODER Result</p>
+
+
+
 
 ### Sense_Amplifier
 - It is basically a differential amplifier which is used here during read operation.
@@ -247,7 +260,7 @@ In this section, Various components of projects are explained in detail and real
 - This is basically used for making the reading process faster.
 - Because we are precharging the BL and BLB node so we are going use a NMOS based sense amplifier i.e the BL and BLB will be connected to gates of NMOS that are signal transistors.
 <figure>
-<img src="./images/SenseAmp.png" alt="Sense Amplifier" title="Figure 7" height="500" width="1200">
+<img src="./images/SenseAmp.png" alt="Sense Amplifier" title="Figure 7" height="400" width="1200">
     <p align="center">Figure 10: SENSE AMPLIFIER</p> 
 </figure>
 
@@ -289,6 +302,10 @@ In this section, Various components of projects are explained in detail and real
 - For a transistor to be in stauration its gm/Id ration should be between [4,10].
 - Hence after the design of the current mirrors we have preapared a testbench and done DC simulation we have started wih a value i.e 'gm/Id = 7.5'
 - After completion of entire circuit now again we have done DC simulation and found out the node voltage is 999mv.
+
+- ![Screenshot from 2023-10-13 19-53-48 (1)](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/4ea59c5b-29d9-42d7-83df-1c9b6cb6a87a)
+  <p align="center">Figure 13: DC SIMULATION RESULT</p>
+
 - Then the next parameter to focus on was 'gain'.
 
 - Gain = gm&times;ro
@@ -303,9 +320,6 @@ In this section, Various components of projects are explained in detail and real
     - Hence in this way the sizes of the transistors are decided and to verify the gain we were doing AC analysis.
       
 <figure>
-    
-   ![SA design](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/0274f8c3-796e-4398-9579-769a7013d6d6)
-    <p align="center">Figure 8: SENSE AMPLIFIER Testbench</p>
     <img src="./images/TestbenchSA.png" alt="SA testbech" title="Figure 8" height="500" width="1200">
     <p align="center">Figure 9: SENSE AMPLIFIER Testbench</p>
 </figure>
