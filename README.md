@@ -15,6 +15,7 @@
     - [Row_decoder](#Row_decoder)
     - [Sense_Amplifier](#Sense_Amplifier)
 - [Design and testbench](#Design_and_testbench)
+- [Conclusion](#Conclusion)
 
 ## Introduction
 
@@ -121,7 +122,7 @@ In this section, Various components of projects are explained in detail and real
     <img src="./images/SRAM.png" alt="6T SRAM" title="Figure 4" height="500" width="700" align="center">
 </figure>
 <p></p>
-<p>&nbsp;Figure 4: 6T SRAM</p>
+<p>&nbsp;Figure 6: 6T SRAM</p>
 </div>
 
 <!--<table align="center">
@@ -182,16 +183,17 @@ In this section, Various components of projects are explained in detail and real
   <img src="./images/readopgr.png" alt="Image 2" width="48%">
 </div>
 --->
+
 ![Screenshot from 2023-10-11 15-44-32](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/52a51953-bd00-4bcb-835f-a45b70b4b385)
 
 
 
 <figure>
-<!-- <figcaption>Figure 4: Read simulation testbench</figcaption> -->
+<!-- <figcaption>Figure 7: Read simulation testbench</figcaption> -->
 <img src="./images/readopcir.png" alt="Read simulation" title="Figure 4" height="600" width="1000">
-<p align="center">Figure 4: Read simulation testbench</p>
+<p align="center">Figure 7: Read simulation testbench</p>
 <img src="./images/readopgr.jpg" alt="Read result" title="Figure 4" height="600" width="1000">
-<p align="center">Figure 5: Read simulation Result</p>
+<p align="center">Figure 8: Read simulation Result</p>
 </figure>
 
 
@@ -212,9 +214,9 @@ In this section, Various components of projects are explained in detail and real
 <!--
 <figure>
 <img src="./images/writeopcir.png" alt="Read simulation" title="Figure 4" height="600" width="1500">
-   <p align="center">Figure 6: Write simulation testbench</p>
+   <p align="center">Figure 9: Write simulation testbench</p>
 <img src="./images/writeopgr.png" alt="Read result" title="Figure 4" height="600" width="1500">
-    <p align="center">Figure 7: Write simulation Result</p>
+    <p align="center">Figure 10: Write simulation Result</p>
 </figure>
 -->
 
@@ -231,7 +233,7 @@ In this section, Various components of projects are explained in detail and real
 <figure>
 <!--<figcaption>Figure 7: SRAM STATIC NOISE MARGINE</figcaption>-->
 <img src="./images/sramsnm.png" alt="Read simulation" title="Figure 4" height="600" width="1200">
-<p align="center">Figure 8: SRAM STATIC NOISE MARGINE</p>
+<p align="center">Figure 11: SRAM STATIC NOISE MARGINE</p>
 </figure>
 
 ### Row_decoder
@@ -242,19 +244,19 @@ In this section, Various components of projects are explained in detail and real
 <figure>
 <!--<figcaption>Figure 8: ROW DECODER</figcaption>-->
 <img src="./images/Rowdec.png" alt="ROW DECODER" title="Figure 8" height="600" width="1200">
-    <p align="center">Figure 9: ROW DECODER</p>
+    <p align="center">Figure 12: ROW DECODER</p>
 </figure>
 
 #### Implementation
 
 ![Screenshot from 2023-10-13 11-05-55](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/277282b5-6640-457f-9d2f-c259ea18618d)
-<p align="center">Figure 10: ROW DECODER IMPLEMENTATION</p>  
+<p align="center">Figure 13: ROW DECODER IMPLEMENTATION</p>  
 
 ![Screenshot from 2023-10-06 16-20-00](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/a9f03527-478a-46ac-86b8-f86de1317ca0)
-<p align="center">Figure 10: ROW DECODER Testbench</p>
+<p align="center">Figure 14: ROW DECODER Testbench</p>
 
 ![Screenshot from 2023-10-06 16-31-06](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/fc6ce815-45ed-4007-9724-a2bccf5336c4)
-<p align="center">Figure 10: ROW DECODER Result</p>
+<p align="center">Figure 15: ROW DECODER Result</p>
 
 
 
@@ -266,7 +268,7 @@ In this section, Various components of projects are explained in detail and real
 - Because we are precharging the BL and BLB node so we are going use a NMOS based sense amplifier i.e the BL and BLB will be connected to gates of NMOS that are signal transistors.
 <figure>
 <img src="./images/SenseAmp.png" alt="Sense Amplifier" title="Figure 7" height="400" width="1200">
-    <p align="center">Figure 10: SENSE AMPLIFIER</p> 
+    <p align="center">Figure 16: SENSE AMPLIFIER</p> 
 </figure>
 
 #### Working Principle :
@@ -309,7 +311,7 @@ In this section, Various components of projects are explained in detail and real
 - After completion of entire circuit now again we have done DC simulation and found out the node voltage is 999mv.
 
 - ![Screenshot from 2023-10-13 19-53-48 (1)](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/4ea59c5b-29d9-42d7-83df-1c9b6cb6a87a)
-  <p align="center">Figure 13: DC SIMULATION RESULT</p>
+  <p align="center">Figure 17: DC SIMULATION RESULT</p>
 
 - Then the next parameter to focus on was 'gain'.
 
@@ -326,13 +328,13 @@ In this section, Various components of projects are explained in detail and real
       
 <figure>
     <img src="./images/TestbenchSA.png" alt="SA testbech" title="Figure 8" height="500" width="1200">
-    <p align="center">Figure 9: SENSE AMPLIFIER Testbench</p>
+    <p align="center">Figure 18: SENSE AMPLIFIER Testbench</p>
 </figure>
    
 **AC ANALYSIS RESULT**
 <figure>
     <img src="./images/GainSA.jpg" alt="AC ANALYSIS RESULT" title="Figure 8" height="500" width="1200">
-    <p align="center">Figure 10: AC ANALYSIS RESULT</p>
+    <p align="center">Figure 19: AC ANALYSIS RESULT</p>
 </figure>
 
 - After AC analysis we will design INV1 .
@@ -359,7 +361,7 @@ In this section, Various components of projects are explained in detail and real
   **Transient Analysis result**
 
   ![TranSA (1)](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/e31dcda7-cdf2-464b-a975-3253955b7dde)
-  <p align="center">Figure x:Transient response of sense Amplifier</p>
+  <p align="center">Figure 20:Transient response of sense Amplifier</p>
 
 
  
@@ -372,19 +374,19 @@ In this section, Various components of projects are explained in detail and real
   **6T SRAM CELL TEST**
   
   ![Screenshot from 2023-10-13 15-11-35](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/89a3fb23-feab-4e2b-b3fb-949dc1b917a5)
-  <p align="center">Figure x:Design For 6T SRAM cell</p>
+  <p align="center">Figure 21:Design For 6T SRAM cell</p>
   
   ![Screenshot from 2023-10-13 15-15-53](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/ab630d28-7abe-4426-9993-124a27649532)
-  <p align="center">Figure x:Testbench for 6T SRAM CELL</p>
+  <p align="center">Figure 22:Testbench for 6T SRAM CELL</p>
 
   ![Screenshot from 2023-10-13 15-09-23](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/54a6c926-b127-4b47-a978-e7d80c448287)
-  <p align="center">Figure x:Transient response of 6T SRAM cell</p>
+  <p align="center">Figure 23:Transient response of 6T SRAM cell</p>
 
   **16 byte SRAM test**
   - We will creat 16 byte sram by arranging 8 6T SRAM cells in one row and 16 such rows.
     
   ![Screenshot from 2023-10-13 18-52-05](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/2af27956-4611-4a81-9a9c-f89a33947343)
-  <p align="center">Figure x:16 byte SRAM</p>
+  <p align="center">Figure 24:16 byte SRAM</p>
 
   - Here our goal is to find out maximum frequncy that the 16 byte memory will operate on.
   - For that we are going take the initial frequency as 10MHz i.e the precharge signal time period will be 100ns.
@@ -398,10 +400,10 @@ In this section, Various components of projects are explained in detail and real
     
   
     ![Screenshot from 2023-10-16 12-52-22](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/ccdf65d9-2ff8-4889-8a35-1f6eccd3c920)
-    <p align="center">Figure x:16 byte SRAM entire design</p>
+    <p align="center">Figure 25:16 byte SRAM entire design</p>
 
     ![Screenshot from 2023-10-16 12-51-49](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/e5c0f0f6-f92c-41dd-bbf7-24f097f54261)
-    <p align="center">Figure x:16 byte SRAM testbench</p>
+    <p align="center">Figure 26:16 byte SRAM testbench</p>
 
     **Simulations**
     
@@ -451,10 +453,27 @@ In this section, Various components of projects are explained in detail and real
       ![Screenshot from 2023-10-16 18-42-17](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/723747f1-3e3a-4bc5-beb9-8acf9939d0dc)
       <p align="center">One read in 50MHz case</p>
 
+ **Power Evaluation**
+
+ - Here we have estimated total power drawn by the circuit in different corners.
+ - Power = Avergae current * Vdd
+ - Average current is calculation using calculator fuction.
+ - In worst case the power consumption is : 1.065 mW
+   
+  ![Screenshot from 2023-10-17 13-42-46](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/fe7c6d9e-8433-4159-875e-e1e558c14e61)
+
+
 
   ### Conclusion
-
-  - 
+  
+  - We have designed 16 byte SRAM by arranging 16 6T SRAM cell in 8 rows.
+  - We have also used components like precharge circuit, Write driver, Row decoder, Sense Amplifier.
+  - The maximum delay for read operation is around 14nsec.
+  - The maximum frequency that is achieved is 50MHz.
+  - The maximum power consumption is 1.065mW.
+  - The maximum delay for read operation is around 14nsec.
+  - The operating range of temperature is from -40 to 85 degree celcius.
+  - The circuit is tested in corners like Wp, Ws and tm.
      
 
   
