@@ -96,14 +96,15 @@ In this section, Various components of projects are explained in detail and real
 <img src="./images/writedriver.png" alt="Write driver" title="Figure 4" height="500" width="1000" align="center">
 <p align="center">Figure 4 : Write driver</p>
 
-  ![Screenshot from 2023-10-11 11-34-04](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/100b63b8-2861-4ed8-b649-9e52cee30a7f)
+  ![write_driver_theory](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/a2f0f2b5-42d7-4820-9bda-bf8c1e753e0e)
+
   
 **Operation**
 - In the scematic, we are using two Pass transistors one for BL and one for BLB.
-- Now we are using a nand gate to generate the control signal for write driver.
-- The nand gate inputs are ctrl and rwn' when both will be 1 then there will be write operation so the output of nand gate i.e 0 will be used to control 
+- Now we are using a nand gate to generate the control signal for pass transistors which will be working as switches.
+- The nand gate inputs are ctrl and rwnb when both will be 1 then there will be write operation so the output of nand gate i.e 0, will be used to control 
   the PMOS and the inverted signal i.e 1 will be used to control NMOS.
-- In other conditions the PMOS and NMOS will be at OFF state so nowrite at that time.
+- In other conditions the PMOS and NMOS will be at OFF state so no write at that time.
   
 #### Implementation
   
@@ -141,15 +142,15 @@ In this section, Various components of projects are explained in detail and real
      - read operation
      - write operation
      - hold operation
-- In read and write operation WL (Word line) = 1 and in hold operation WL = 0
+- In read and write operation WL (Word line) = 1 and in hold operation WL = 0.
 - Word line will be controlled by a signal called control and row decoder output, which will be discussed later.
 - read write operation will be controlled by  signal rwn and  control as shown in figure 1 i.e SRAM architecture.
 ##### read operation :
 - in read operation first the bit line (BL) and bit line bar (BLB) node will be charged to vdd.
-- Then PC=1 i.e Precharge will be turned OFF, in figure 2 suppose node N1 is at vdd and N2 is at zero i.e we can say that we have stored a logic 1 in sram cell previously.
+- Then PC=1 i.e Precharge will be turned OFF, in figure 4 suppose node N1 is at vdd and N2 is at zero i.e we can say that we have stored a logic 1 in sram cell previously.
 - When we will make WL = 1 then, 
-  BL node is at vdd and N1 is at also at vdd then there will be no change in BL where as BLB node is at vdd but N2 is at logic 0 and M1 is also ON
-  hence BLB node will try to discharge i.e the Parasitic Cap at BLB node Cpar will discharge through that path of M3 and M1.
+  BL node is at vdd and N1 is at also at vdd then there will be no change in BL where as BLB node is at vdd but N2 is at logic 0 and M2 is also ON as N1 is input for M2 because of back to back structure
+  hence BLB node will try to discharge i.e the Parasitic Cap at BLB node Cpar will discharge through that path of M2 and M4.
 - In this way BL node is stable and BLB node is going down which is a indication that we are reading logic 1 similarly while reading logic 0 BLB node will be stable at logic 1 where as BL node will be  dischagred gradually.
 - During read operation there is a problem that we can face that is :
    - While reading logic 0 BL node will be discharged and it will charge N1 node and if N1 node will be charged to same or more than threshold voltage then the NMOS on the other side 
@@ -162,7 +163,7 @@ In this section, Various components of projects are explained in detail and real
 - In write operation, first we will precharge both the nodes to vdd .
 - Suppose node N1 is at logic 0 and N2 is at logic 1, now we want to say write logic 1 to node N1.
 - After precharge, we will make PC = 1 and then when Ctrl = 1 and rwn = 0 at that time the write driver will be connected to the BL and BLB line.
-- Data line will be connected to BL where as Data' line will be connected to BLB.
+- Data line will be connected to BL where as Data bar line will be connected to BLB.
 - As we want to write one the BL line will at logic 1 and the BLB line will be at logic 0.
 - Then WL=1, so that the data in BL and BLB line can be stored in the internal node of the sram i.e N1 and N2 in this case.
   
@@ -171,7 +172,8 @@ In this section, Various components of projects are explained in detail and real
   
   [Sram Sizing calculation](https://github.com/Priyansu122/VLSI-COURSE-2022/blob/branch1/images/SRAM%20SIZE%20CALCULATION.pdf)
 - From the above, we have got a rough estimation of the sizes of transistors in 6T SRAM.
-- We have kept all transistor W = 250nm and L = 180nm and using this sizings we have build designs and testbenchs in **cadence virtuso schematic editor tool**.
+  
+- We have kept all transistor W = 250nm and L = 180nm and using this sizings we have build designs and testbenchs in **cadence virtuoso schematic editor tool**.
 
 #### Implementation  
 
@@ -280,7 +282,7 @@ In this section, Various components of projects are explained in detail and real
         - Becuase of that the sense amplifier will be turned OFF as M3,M4 and M0,M5 will be OFF.
         - Node will be at logic 0 thats why the sense amplifier output will be at logic 0.
         - Hence during this state the powerloss will not happen as the output is fixed at a point.
-        - For our project we have considered sense amp as alaways ON hence, sense amp output will be always equal to 0. 
+        - For our project we have considered sense amp as always ON, hence sa = 0 (always).
         
 - In the above sense Amplifier design there are two current mirrors i.e M0,M5 and M3,M4.
 - In this circuit when BL and BLB will be at vdd at that time the node voltage will be at 999mv.
