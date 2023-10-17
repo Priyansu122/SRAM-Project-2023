@@ -208,13 +208,17 @@ In this section, Various components of projects are explained in detail and real
     - When BL node is at logic 0 at that time the N1 node voltage`is at around 100mv or 0.1V.
     - Since our SNM for SRAM cell is 0.6V we can say that the zero has been written at N1.
 
-
+<!--
 <figure>
 <img src="./images/writeopcir.png" alt="Read simulation" title="Figure 4" height="600" width="1500">
    <p align="center">Figure 6: Write simulation testbench</p>
 <img src="./images/writeopgr.png" alt="Read result" title="Figure 4" height="600" width="1500">
     <p align="center">Figure 7: Write simulation Result</p>
 </figure>
+-->
+
+![write drawio (1)](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/23907d2d-4eba-4df0-89f0-e31a758c95db)
+
 
 
 **3. SRAM SNM**
@@ -350,32 +354,32 @@ In this section, Various components of projects are explained in detail and real
   |INV1 NMOS|300nm|1|1|180nm|
   |INV2 PMOS|930nm|6|1|180nm|
   |INV2 NMOS|300nm|4|1|180nm|
+
+  **Transient Analysis result**
+
+  ![TranSA (1)](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/e31dcda7-cdf2-464b-a975-3253955b7dde)
+  <p align="center">Figure x:Transient response of sense Amplifier</p>
+
+
  
 
 ### Design_and_testbench
-- Till now we have seen individual components of this project and got to know about there working principle and operations.In this section we are going to look at the the design, testbench and simulation result
-  for all the components and finally we are going to intergrate all of them together to build the entire system and respective testbench for that.
+- Till now we have seen individual components of this project and got to know about their working, operation, design complexity and some relevant simulation results.
+- In this section we will first test a single 6T SRAM cell with precharge circuit, Write driver, row decoder and Sense Amplifier.
+- Then we will reperesent 16 byte SRAM then test it will be tested with other components and we will observe overall result
 
-  #### Precharge Circuit  :
+  **6T SRAM CELL TEST**
+  
+  ![Screenshot from 2023-10-13 15-11-35](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/89a3fb23-feab-4e2b-b3fb-949dc1b917a5)
+  <p align="center">Figure x:Design For 6T SRAM cell</p>
+  
+  ![Screenshot from 2023-10-13 15-15-53](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/ab630d28-7abe-4426-9993-124a27649532)
+  <p align="center">Figure x:Testbench for 6T SRAM CELL</p>
 
-  #### Write driver :
+  ![Screenshot from 2023-10-13 15-09-23](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/54a6c926-b127-4b47-a978-e7d80c448287)
+  <p align="center">Figure x:Transient response of 6T SRAM cell</p>
 
-  #### 6T SRAM :
-
-  #### Row decoder :
-
-  #### Design of the System
-
-  **16 byte SRAM**
-  **System explanation**
-  **Testbech**
-  **Operating condition**
-  **Result explanation**
-  **Write delay**
-  read delay
-  corner simulation result
-  how we have found out maximum frequncy to operate
-
+ 
   ### Conclusion
      
 
