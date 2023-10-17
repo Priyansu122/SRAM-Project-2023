@@ -14,7 +14,7 @@
     - [6T_SRAM](#6T_SRAM)
     - [Row_decoder](#Row_decoder)
     - [Sense_Amplifier](#Sense_Amplifier)
-- [Design and testbench](#Design_and_testbech)
+- [Design and testbench](#Design_and_testbench)
 
 ## Introduction
 
