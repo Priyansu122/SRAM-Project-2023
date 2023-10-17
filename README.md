@@ -35,11 +35,10 @@ Applications of SRAM include serving as cache memory in microprocessors, providi
 
 - Figure 1 respresents the the architecture of the 16 byte SRAM along with some supporting elements like precharge circuit, write driver etc.
 - We can read or write 8 byte data in the memory element and the total amount of memeory avaliable is 16 byte.
-- The maximum frequecy of operation can be upto 75MHz.
 - The design of 16 byte SRAM is done by arranging the **6T SRAM cells** as 16 row and in ach row there will be 8 cells
    for each row there will a word line (WL) and for each colum there will a BL and BLB so in total there will be 16 WL and 8 BL and BLB.
 - 6T SRAM cells are designed using a back to back inverter and two access transistors, the design part will be discussed later.
-- 16 transistors in a row will lead to some parasitic capacitances that is refered as Cpar in the fiogure 1
+- 16 transistors in a row will lead to some parasitic capacitances that is refered as Cpar in the figure 1
 
 #### Operation
 
