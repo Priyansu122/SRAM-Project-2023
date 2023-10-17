@@ -379,8 +379,81 @@ In this section, Various components of projects are explained in detail and real
   ![Screenshot from 2023-10-13 15-09-23](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/54a6c926-b127-4b47-a978-e7d80c448287)
   <p align="center">Figure x:Transient response of 6T SRAM cell</p>
 
+  **16 byte SRAM test**
+  - We will creat 16 byte sram by arranging 8 6T SRAM cells in one row and 16 such rows.
+    
+  ![Screenshot from 2023-10-13 18-52-05](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/2af27956-4611-4a81-9a9c-f89a33947343)
+  <p align="center">Figure x:16 byte SRAM</p>
+
+  - Here our goal is to find out maximum frequncy that the 16 byte memory will operate on.
+  - For that we are going take the initial frequency as 10MHz i.e the precharge signal time period will be 100ns.
+  - Then we will check that in how time the precharge circuit can precharge the BL and BLB line, how much time required for the decoder output to settle as we are assiging adress when PC=0.
+  - These details will decide what should be the precharge width.
+  - Then we can calculate read delay for both cases i.e for reading logic and logic 0.
+  - Read delay will be claculated from the ctrl signal i.e after applying the control signal in how uch time the final output is a logic 1 or 0.
+  - Then we will calculate write delay which will be again calculated from ctrl signal that after giving ctrl signal in how much time the internal node of the sram cell is changing and storing the new value.
+  - We will calculate all these things in 100ns precharge then with the results ww will get we will decide the frequency of operation.
  
+    
+  
+    ![Screenshot from 2023-10-16 12-52-22](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/ccdf65d9-2ff8-4889-8a35-1f6eccd3c920)
+    <p align="center">Figure x:16 byte SRAM entire design</p>
+
+    ![Screenshot from 2023-10-16 12-51-49](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/e5c0f0f6-f92c-41dd-bbf7-24f097f54261)
+    <p align="center">Figure x:16 byte SRAM testbench</p>
+
+    **Simulations**
+    
+    <p>1. Calculate the PC width <p>
+
+    ![Screenshot from 2023-10-16 12-50-25](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/fdc5b979-d84f-4a4c-9d54-cca463e87571)
+    
+    ![Prechargedelay](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/4c7b89af-9d54-4aeb-84e9-81f434e37d4e)
+
+    ![Screenshot from 2023-10-16 12-50-54](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/5679e4c8-2e66-44c5-bd15-c663f723fc7e)
+
+   <p>2. Calculate Read delay </p>
+
+   ![Screenshot from 2023-10-16 14-17-30](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/64e70ab8-6d99-437c-8d5a-029fa1190b1f)
+
+   ![read_Delay](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/45d26588-a722-44d3-bf94-263dd01dfcc1)
+
+   ![Screenshot from 2023-10-16 14-17-41](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/0b4fd958-e667-45a3-a39e-d63c66cab52d)
+
+  <p>3. Calculate Write delay</p>
+
+  ![Screenshot from 2023-10-16 14-38-55](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/4c9a34ff-9b60-43ff-8078-f54d4acd2e23)
+
+  ![write_Delay](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/3c6ab2cf-84c9-452c-bf86-965934bbab3b)
+
+  ![Screenshot from 2023-10-16 14-36-31](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/43191ff3-fffe-49c4-9779-b31aa06f5685)
+  
+
+  - From above three results we have found out that the PC width should be 10ns for a particular corner i.e Worst speed but for other corners the precharge is done with in 4ns.
+  - Hence we can keep it 4 or 5 nsec.
+  - From the delay results we got that the worst case read delay is for reading logic 0 case i.e 14ns so we have to keep the ctrl 15 nsec.
+  - Then the worst case write delay is 1.53ns.
+  - Hence the the total period can be 20ns which means the maximum operating frequency will be 50MHz.
+  - The simulation in 50MHz frequency is shown below.
+ 
+    ![Screenshot from 2023-10-16 18-32-05](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/e4f79802-51c2-4cc6-aa62-84978fdb8918)
+
+    ![Screenshot from 2023-10-16 18-42-37](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/7f332c28-7fba-43f0-9cf5-e9b777800456)
+
+    ![Screenshot from 2023-10-16 18-46-00](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/0baafb38-8351-4d95-b019-3132b018a268)
+
+    - In 50MHz case the worst case read delay is : 13ns for zero read and 8ns for one read as shown below.
+
+      ![Screenshot from 2023-10-16 18-41-22](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/bf22f7b0-e832-4a8b-8e8c-dfd145cd08f3)
+      <p align="center">Zero read in 50MHz case</p>
+
+      ![Screenshot from 2023-10-16 18-42-17](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/723747f1-3e3a-4bc5-beb9-8acf9939d0dc)
+      <p align="center">One read in 50MHz case</p>
+
+
   ### Conclusion
+
+  - 
      
 
   
