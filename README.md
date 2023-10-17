@@ -470,7 +470,6 @@ In this section, Various components of projects are explained in detail and real
   - The maximum delay for read operation is around 14nsec.
   - The maximum frequency that is achieved is 50MHz.
   - The maximum power consumption is 1.065mW.
-  - The maximum delay for read operation is around 14nsec.
   - The operating range of temperature is from -40 to 85 degree celcius.
   - The circuit is tested in corners like Wp, Ws and tm.
      
