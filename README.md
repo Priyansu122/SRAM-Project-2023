@@ -413,16 +413,30 @@ In this section, Various components of projects are explained in detail and real
     ![Screenshot from 2023-10-16 12-50-25](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/fdc5b979-d84f-4a4c-9d54-cca463e87571)
     
     ![Prechargedelay](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/4c7b89af-9d54-4aeb-84e9-81f434e37d4e)
-
+    
+    - The table below represents delays required to determine PC width in different corners.
+    - We are testing in 3 different temperatures i.e -40&deg;C, 27&deg;C, 85&deg;C and three corners that is Wp, Ws, tm.
+    - We are basically checking after we have given PC when BL and BLB will be charged to 1.8 and the decoder output will settel.
+        
     ![Screenshot from 2023-10-16 12-50-54](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/5679e4c8-2e66-44c5-bd15-c663f723fc7e)
 
-   <p>2. Calculate Read delay </p>
+    - Though the maximum delay is found to be around 10ns but from the below graph we can observe that within 5ns from precharge i.e at 10ns BL and BLB is almost at 1.8V in all corners.
+    - Hence we can keep PC width 5ns.
+    - Then we can give ctrl signal after 2ns.
 
-   ![Screenshot from 2023-10-16 14-17-30](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/64e70ab8-6d99-437c-8d5a-029fa1190b1f)
+    ![Screenshot from 2023-10-18 12-25-20](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/71dfae8f-0fc0-4a0c-b510-6e6bc5e35778)
 
-   ![read_Delay](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/45d26588-a722-44d3-bf94-263dd01dfcc1)
 
-   ![Screenshot from 2023-10-16 14-17-41](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/0b4fd958-e667-45a3-a39e-d63c66cab52d)
+   <p>2. Calculate Read delay </p> 
+   
+   ![Screenshot from 2023-10-18 15-49-39](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/eff54ed1-9159-4b17-8ae8-f662e89ff771)
+
+   ![Screenshot from 2023-10-18 15-49-15](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/d133db9c-94e9-4874-ae8f-f50b566cbe5c)
+
+   ![Screenshot from 2023-10-18 15-40-52](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/ca61d3a9-8cba-4943-84fe-b73c0e2087be)
+
+   - From the corner simulation for read delay we got that 
+  
 
   <p>3. Calculate Write delay</p>
 
