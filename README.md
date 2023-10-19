@@ -418,7 +418,10 @@ In this section, Various components of projects are explained in detail and real
     - We are testing in 3 different temperatures i.e -40&deg;C, 27&deg;C, 85&deg;C and three corners that is Wp, Ws, tm.
     - We are basically checking after we have given PC when BL and BLB will be charged to 1.8 and the decoder output will settel.
         
-    ![Screenshot from 2023-10-16 12-50-54](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/5679e4c8-2e66-44c5-bd15-c663f723fc7e)
+    <!--![Screenshot from 2023-10-16 12-50-54](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/5679e4c8-2e66-44c5-bd15-c663f723fc7e)-->
+    ![image](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/c3f5a80c-dbd7-4ae3-8bb8-69a1555971ca)
+
+
 
     - Though the maximum delay is found to be around 10ns but from the below graph we can observe that within 5ns from precharge i.e at 10ns BL and BLB is almost at 1.8V in all corners.
     - Hence we can keep PC width 5ns.
@@ -433,7 +436,8 @@ In this section, Various components of projects are explained in detail and real
 
    ![Screenshot from 2023-10-18 15-49-15](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/d133db9c-94e9-4874-ae8f-f50b566cbe5c)
 
-   ![Screenshot from 2023-10-18 15-40-52](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/ca61d3a9-8cba-4943-84fe-b73c0e2087be)
+   <!--[Screenshot from 2023-10-18 15-40-52](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/ca61d3a9-8cba-4943-84fe-b73c0e2087be)-->
+   ![image](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/c865a13e-08b8-4210-90d5-28b4cfe0ba47)
 
    - From the corner simulation for read delay we got that 
   
