@@ -459,28 +459,74 @@ In this section, Various components of projects are explained in detail and real
 
   ![Screenshot from 2023-10-16 14-36-31](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/43191ff3-fffe-49c4-9779-b31aa06f5685)
   
+**Maximum Frequency test**  
 
-  - From above three results we have found out that the PC width should be 10ns for a particular corner i.e Worst speed but for other corners the precharge is done with in 4ns.
+  - From above three results we have found out that the PC width should be 10ns for a particular corner i.e Worst speed but for other corners the precharge is done with in 5ns.
   - Hence we can keep it 4 or 5 nsec.
-  - From the delay results we got that the worst case read delay is for reading logic 0 case i.e 14ns so we have to keep the ctrl 15 nsec.
+  - From the delay results we got that the worst case read delay is for reading logic 0 case i.e 12ns so we have to keep the ctrl 13 nsec.
   - Then the worst case write delay is 1.53ns.
   - Hence the the total period can be 20ns which means the maximum operating frequency will be 50MHz.
   - The simulation in 50MHz frequency is shown below.
  
-    ![Screenshot from 2023-10-16 18-32-05](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/e4f79802-51c2-4cc6-aa62-84978fdb8918)
+    ![Screenshot from 2023-10-19 11-56-29](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/18b806eb-c4a8-4f12-8f2e-a4be8514ca40)
+    
+    - To test our circuit in 20ns i.e 50MHz we will write in two location and read from that two location and check the output.
+    - We have given pc after at t=2nsec, at that time Precharge circuit will charge BL and BLB node to 1.8V, the PC width is 5ns.
+    - Then after 2nsec i.e at 9nsec we will give control signal to write at that the memory location and data we are going to write we can see from adress and databus.
+    - Then for second write we will again precharge then during ctrl signal the data will be written in the SRAM.
+    - Read and write operation are determied by rwn signal hence for first two pc rwn is zero i.e writting operation.
+    - When to write and when to read is detemined by ctrl signal.
+    - For reading we have given ctrl signal after 3rd precharge but as we can see we have delay of some nano seconds for reading.
+    - In our test we can written 1 and 0 in two location while reading one the read delay is around 6nsec and write delay is around 12nsec as we can observe it is a little more than the delay we got
+      in 100ns setup because at that time the pc signal was 30nsec so node voltage of sense Amplifier i.e sense amp output is getting more time to settle where as here to improve frequncy we have taken PC to be 5nsec
+      hence node voltage is not getting enough time to settel during PC period.
+    - Also read delay for zero and read delay for one are not same because in our case sense Amplifier is not a symmetrical device that will discussed later.
+    - Another important point to note is here the frequncy is specified by the period of PC signal all other signals are synchronized with PC signal.
 
-    ![Screenshot from 2023-10-16 18-42-37](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/7f332c28-7fba-43f0-9cf5-e9b777800456)
+    **Corner simulation result for read delay in 20ns setup**
+    
+    ![Screenshot from 2023-10-19 12-12-23](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/583fc355-e866-440b-88c5-b725dbb51e75)
 
-    ![Screenshot from 2023-10-16 18-46-00](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/0baafb38-8351-4d95-b019-3132b018a268)
+    - From corner simulation, we can observe that we are getting abnormal corner results for reading zero,
+         - Maximum delay = 12.5nsec in tm,-40&deg;C
+         - Minimum delay = 11.82nsec in Ws,85&deg;C
 
-    - In 50MHz case the worst case read delay is : 13ns for zero read and 8ns for one read as shown below.
+           REASONS :
+           - sense amplifier simulation :
 
-      ![Screenshot from 2023-10-16 18-41-22](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/bf22f7b0-e832-4a8b-8e8c-dfd145cd08f3)
-      <p align="center">Zero read in 50MHz case</p>
+             ![Screenshot from 2023-10-19 12-36-41](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/2ae1ba95-7ed7-4cc7-ab2e-5b2a16f17831)
+             <p align="center">Sense Amplifier Output test</p>  
+             
+             ![Screenshot from 2023-10-19 12-58-17](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/8b31f4ff-478f-4c14-b67b-13493c12f232) 
+             <p align="center">Read delay variation Analysis</p>
 
-      ![Screenshot from 2023-10-16 18-42-17](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/723747f1-3e3a-4bc5-beb9-8acf9939d0dc)
-      <p align="center">One read in 50MHz case</p>
+             - from above first figure, it is seen that when BL and BLB is at 1.8 at that time if the node that is sense amp differential output is at 1.8 it is discharging to stable voltage 999mv very slowly but if it is at 0V then it is charging
+               to 999mv very fast.
+                - This is happening becuase in our case the Sense Amplifier is not symmetrical.
+                - When Node voltage is at zero M4 is at saturation but very less current will not flow through M2.
+                - So I1 = I3 = I4 will increse to maintain I5 as 1uA and we know Ir1 = I4 - I2.
+                - As I2 is small hence Ir1 is high and it will charge the node cap in less time.
+                - But when node is at 1.8, it should be discharged by M2 but a very less current is flowing through M2 as it is not conductive becuase
+                  of the sizing and bulk connection to ground and presence of some Vsb voltage, it is in sub threshold region.
+                - Some part of that current is provided by M4 hence Ir0 is very less.
+                - Therefore it is taking too much time to discharge the node to 999mv.
+                - There are 3 ways to improve this,
+                     1. Increse the strength of M0 and M5 so that M5 can pump more current.
+                     2. Decrese the strength of M3 and M4 so that it may take a little more time for reading 1 but in case of reading zero I4 will decrese by which Ir0 has to increse.
+                     3. Keep the M1 and M2 at saturation by decresing the gm/Id ratio.
 
+            - Now we will compare the delays in corners.
+                 - At Wp,-40&deg;C => Maximum current is there
+                 - Therefore it is expected that here delays will be less but we are getting least delay in Wp,85&deg;C.
+                 - We can jutify this using the below comparision.
+                   
+        ![Screenshot from 2023-10-19 15-43-04](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/7cfe3dab-d5b7-4acd-87e8-bd06a6dd4890)
+
+        ![Screenshot from 2023-10-19 16-08-21](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/0054ca6c-6f59-465a-b63e-3798740432e6)
+
+           
+
+             
  **Power Evaluation**
 
  - Here we have estimated total power drawn by the circuit in different corners.
