@@ -417,6 +417,8 @@ In this section, Various components of projects are explained in detail and real
     - The table below represents delays required to determine PC width in different corners.
     - We are testing in 3 different temperatures i.e -40&deg;C, 27&deg;C, 85&deg;C and three corners that is Wp, Ws, tm.
     - We are basically checking after we have given PC when BL and BLB will be charged to 1.8 and the decoder output will settel.
+ 
+       **Corner simulation results for PC signal width**
         
     <!--![Screenshot from 2023-10-16 12-50-54](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/5679e4c8-2e66-44c5-bd15-c663f723fc7e)-->
     ![image](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/c3f5a80c-dbd7-4ae3-8bb8-69a1555971ca)
@@ -436,10 +438,15 @@ In this section, Various components of projects are explained in detail and real
 
    ![Screenshot from 2023-10-18 15-49-15](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/d133db9c-94e9-4874-ae8f-f50b566cbe5c)
 
+  **Corner simulation results for read delay**
+
    <!--[Screenshot from 2023-10-18 15-40-52](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/ca61d3a9-8cba-4943-84fe-b73c0e2087be)-->
    ![image](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/c865a13e-08b8-4210-90d5-28b4cfe0ba47)
 
-   - From the corner simulation for read delay we got that 
+   - From the corner simulation for read delay we got that
+       - Delays are different for reading zero and reading one.
+       - Maximum delay to read zero is around 12ns where as maximum delay for reading one is around 5.5ns.
+       - Hence we need to keep ctrl signal width around 13ns for being in safer side and pass all corners.
   
 
   <p>3. Calculate Write delay</p>
@@ -447,6 +454,8 @@ In this section, Various components of projects are explained in detail and real
   ![Screenshot from 2023-10-16 14-38-55](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/4c9a34ff-9b60-43ff-8078-f54d4acd2e23)
 
   ![write_Delay](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/3c6ab2cf-84c9-452c-bf86-965934bbab3b)
+
+  **Corner simulation result for write delay**
 
   ![Screenshot from 2023-10-16 14-36-31](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/43191ff3-fffe-49c4-9779-b31aa06f5685)
   
@@ -478,6 +487,8 @@ In this section, Various components of projects are explained in detail and real
  - Power = Avergae current * Vdd
  - Average current is calculation using calculator fuction.
  - In worst case the power consumption is : 1.065 mW
+
+   **Power simulation result in different corners**
    
   ![Screenshot from 2023-10-17 13-42-46](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/fe7c6d9e-8433-4159-875e-e1e558c14e61)
 
@@ -492,6 +503,8 @@ In this section, Various components of projects are explained in detail and real
   - The maximum power consumption is 1.065mW.
   - The operating range of temperature is from -40 to 85 degree celcius.
   - The circuit is tested in corners like Wp, Ws and tm.
+
+### Improvements
      
 
   
