@@ -550,7 +550,6 @@ In this section, Various components of projects are explained in detail and real
   - The operating range of temperature is from -40 to 85 degree celcius.
   - The circuit is tested in corners like Wp, Ws and tm.
 
-### Improvements
      
 
   
