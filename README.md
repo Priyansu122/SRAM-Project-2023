@@ -9,11 +9,13 @@
 - [Introduction](#Introduction)
 - [Architecture](#Architecture)
 - [Components](#Components)
-    - [Precharge_circuit](#Precharge_circuit)
-    - [Write_driver](#Write_driver)
     - [6T_SRAM](#6T_SRAM)
+    - [Precharge_circuit](#Precharge_circuit)
     - [Row_decoder](#Row_decoder)
     - [Sense_Amplifier](#Sense_Amplifier)
+    - [Write_driver](#Write_driver)
+
+    
 - [Design and testbench](#Design_and_testbench)
 - [Conclusion](#Conclusion)
 
@@ -55,66 +57,7 @@ Applications of SRAM include serving as cache memory in microprocessors, providi
 
 ## Components
 
-In this section, Various components of projects are explained in detail and realted equations, simulation results are mentioned.
-### Precharge_circuit
-<div align="center">
-<!--<figcaption>Figure 2: Precharge Circuit</figcaption>-->
-<img src="./images/Precharge.png" alt="Precharge circuit" title="Figure 2" height="400" width="700">
-<p align="center">Figure 2: Precharge Circuit</p>
-</div>
-
-- Preharge circuit is basically used to charge the BL and BLB node to vdd before write and read operation.
-- When PC = 0, at that time the PMOS will be ON and it will charge the BL and BLB to vdd.
-- The Meq i.e shown in figure 2 is basically the equallizer transistor whose purpose is to equallize the BL and BLB line during precharge period.
-- As discussed earlier, we have a large parasistic capacitance on BL node i.e Cpar. Now PMOS in the Precharge has to be that large so that it can charge the capacitance in less time.
-- The Access transistor SRAM has W = 250nm and L=180nm.
-
-![image](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/247e993a-def0-4d79-952d-cf6472b11588)
-
-
-
-- Where,
-          Wp = Width of M1, M2 i.e Precharge circuit PMOS
-- In this calucation 250nm is multiplied by 16 becuase there are 16 access transistors in a column and the Cper is the overall capacitance because of all access transistor.
-- Then it is divided by 4 to maintain stage ratio and then multiplied by 2 for &beta; ratio.
-
-#### Implementation
-  
-   <p></p>
-  <div align="center">
-  <img src="./images/cad_precharge.png" alt="Precharge circuit implementation" title="Figure 2" height="500" width="800">
-  <p></p>
-  <p align="center">Figure 3: Implementation of Precharge Circuit</p>
-  </div>
- 
-
-### Write_driver
-- The write driver is used to drive the data to the BL and data' to BLB node.
-- This will be controlled by the ctrl i.e control signal and rwn signal.
-- When ctrl = 1 and rwn = 0 at that time only the write operation will be there.
-- Now the question is what is the requiremnet of Write driver ?
-<img src="./images/writedriver.png" alt="Write driver" title="Figure 4" height="500" width="1000" align="center">
-<p align="center">Figure 4 : Write driver</p>
-
-  ![write_driver_theory](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/a2f0f2b5-42d7-4820-9bda-bf8c1e753e0e)
-
-  
-**Operation**
-- In the scematic, we are using two Pass transistors one for BL and one for BLB.
-- Now we are using a nand gate to generate the control signal for pass transistors which will be working as switches.
-- The nand gate inputs are ctrl and rwnb when both will be 1 then there will be write operation so the output of nand gate i.e 0, will be used to control 
-  the PMOS and the inverted signal i.e 1 will be used to control NMOS.
-- In other conditions the PMOS and NMOS will be at OFF state so no write at that time.
-  
-#### Implementation
-  
-   <p></p>
-  <div align="center">
-  <img src="./images/cad_writedriver.png" alt="Precharge circuit implementation" title="Figure 2" height="500" width="1200">
-  <p></p>
-  <p align="center">Figure 5: Implementation of Write Driver</p>
-  </div>
-
+In this section, Various components of projects are explained in detail and realted equations, simulation results are mentioned.  
 
 ### 6T_SRAM
 <div align = "center">
@@ -167,23 +110,24 @@ In this section, Various components of projects are explained in detail and real
 - As we want to write one the BL line will at logic 1 and the BLB line will be at logic 0.
 - Then WL=1, so that the data in BL and BLB line can be stored in the internal node of the sram i.e N1 and N2 in this case.
   
-**SRAM design**
+**SRAM design**  
+
 - For detailed calculation of Transistor sizing in **SRAM DESIGN** refer the pdf attached in the link :
   
-  [Sram Sizing calculation](https://github.com/Priyansu122/VLSI-COURSE-2022/blob/branch1/images/SRAM%20SIZE%20CALCULATION.pdf)
-- From the above, we have got a rough estimation of the sizes of transistors in 6T SRAM.
+  [Sram Transistor Sizing calculation](https://github.com/Priyansu122/VLSI-COURSE-2022/blob/branch1/images/SRAM%20SIZE%20CALCULATION.pdf)
   
+- From the above, we have got a rough estimation of the sizes of transistors in 6T SRAM.
 - We have kept all transistor W = 250nm and L = 180nm and using this sizings we have build designs and testbenchs in **cadence virtuoso schematic editor tool**.
 
 #### Implementation  
-
- **1. Read simulation**
 <!--- 
 <div style="display: flex; justify-content: space-between;">
   <img src="./images/readopcir.png" alt="Image 1" width="48%">
   <img src="./images/readopgr.png" alt="Image 2" width="48%">
 </div>
---->
+--->  
+
+**1. Read simulation**  
 
 ![Screenshot from 2023-10-11 15-44-32](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/52a51953-bd00-4bcb-835f-a45b70b4b385)
 
@@ -237,6 +181,37 @@ In this section, Various components of projects are explained in detail and real
 <p align="center">Figure 11: SRAM STATIC NOISE MARGINE</p>
 </figure>
 
+### Precharge_circuit
+<div align="center">
+<!--<figcaption>Figure 2: Precharge Circuit</figcaption>-->
+<img src="./images/Precharge.png" alt="Precharge circuit" title="Figure 2" height="400" width="700">
+<p align="center">Figure 2: Precharge Circuit</p>
+</div>
+
+- Preharge circuit is basically used to charge the BL and BLB node to vdd before write and read operation.
+- When PC = 0, at that time the PMOS will be ON and it will charge the BL and BLB to vdd.
+- The Meq i.e shown in figure 2 is basically the equallizer transistor whose purpose is to equallize the BL and BLB line during precharge period.
+- As discussed earlier, we have a large parasistic capacitance on BL node i.e Cpar. Now PMOS in the Precharge has to be that large so that it can charge the capacitance in less time.
+- The Access transistor SRAM has W = 250nm and L=180nm.
+
+![image](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/247e993a-def0-4d79-952d-cf6472b11588)
+
+
+
+- Where,
+          Wp = Width of M1, M2 i.e Precharge circuit PMOS
+- In this calucation 250nm is multiplied by 16 becuase there are 16 access transistors in a column and the Cper is the overall capacitance because of all access transistor.
+- Then it is divided by 4 to maintain stage ratio and then multiplied by 2 for &beta; ratio.
+
+#### Implementation
+  
+   <p></p>
+  <div align="center">
+  <img src="./images/cad_precharge.png" alt="Precharge circuit implementation" title="Figure 2" height="500" width="800">
+  <p></p>
+  <p align="center">Figure 3: Implementation of Precharge Circuit</p>
+  </div>
+ 
 ### Row_decoder
 - As we have discussed earlier we have designed 16 byte memory i.e we have 16 rows storing 1 byte each and at a time we can access 1 byte memory only for read or write operation.
 - So we have designed a 4:16 decoder which will take address as input and then decoders output will be given to a AND gate as input and another input of that gate is ctrl then the output of the AND gate will be given to Word line.
@@ -258,9 +233,6 @@ In this section, Various components of projects are explained in detail and real
 
 ![Screenshot from 2023-10-06 16-31-06](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/fc6ce815-45ed-4007-9724-a2bccf5336c4)
 <p align="center">Figure 15: ROW DECODER Result</p>
-
-
-
 
 ### Sense_Amplifier
 - It is basically a differential amplifier which is used here during read operation.
@@ -311,7 +283,7 @@ In this section, Various components of projects are explained in detail and real
 - Hence after the design of the current mirrors we have preapared a testbench and done DC simulation we have started wih a value i.e 'gm/Id = 7.5'
 - After completion of entire circuit now again we have done DC simulation and found out the node voltage is 999mv.
 
-- ![Screenshot from 2023-10-13 19-53-48 (1)](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/4ea59c5b-29d9-42d7-83df-1c9b6cb6a87a)
+ ![Screenshot from 2023-10-13 19-53-48 (1)](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/4ea59c5b-29d9-42d7-83df-1c9b6cb6a87a)
   <p align="center">Figure 17: DC SIMULATION RESULT</p>
 
 - Then the next parameter to focus on was 'gain'.
@@ -364,8 +336,33 @@ In this section, Various components of projects are explained in detail and real
   ![TranSA (1)](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/e31dcda7-cdf2-464b-a975-3253955b7dde)
   <p align="center">Figure 20:Transient response of sense Amplifier</p>
 
+### Write_driver
+- The write driver is used to drive the the BL and BLB node in less time.
+- This will be controlled by the ctrl i.e control signal and rwn signal.
+- When ctrl = 1 and rwn = 0 at that time only the write operation will be there.
+- Now the question is what is the requiremnet of Write driver ?
+<img src="./images/writedriver.png" alt="Write driver" title="Figure 4" height="500" width="1000" align="center">
+<p align="center">Figure 4 : Write driver</p>
 
- 
+  ![write_driver_theory](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/a2f0f2b5-42d7-4820-9bda-bf8c1e753e0e)
+
+  
+**Operation**
+- In the scematic, we are using two Pass transistors one for BL and one for BLB.
+- Now we are using a nand gate to generate the control signal for pass transistors which will be working as switches.
+- The nand gate inputs are ctrl and rwnb when both will be 1 then there will be write operation so the output of nand gate i.e 0, will be used to control 
+  the PMOS and the inverted signal i.e 1 will be used to control NMOS.
+- In other conditions the PMOS and NMOS will be at OFF state so no write at that time.
+  
+#### Implementation
+  
+   <p></p>
+  <div align="center">
+  <img src="./images/cad_writedriver.png" alt="Precharge circuit implementation" title="Figure 2" height="500" width="1200">
+  <p></p>
+  <p align="center">Figure 5: Implementation of Write Driver</p>
+  </div>
+
 
 ### Design_and_testbench
 - Till now we have seen individual components of this project and got to know about their working, operation, design complexity and some relevant simulation results.
