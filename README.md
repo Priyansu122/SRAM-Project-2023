@@ -548,8 +548,12 @@ In this section, Various components of projects are explained in detail and real
     ![SRAM_pc](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/58240623-66b0-45cb-9271-1e0187b132ce)
 
     
+    ![sram_entire_system](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/3cb80f33-c1be-443c-af47-8f156dfb9e4e)
 
-  
+    ![precharge_cir](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/97f2163a-40ac-454d-b86a-b0c71141fc2e)
+    
+![decoder](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/390a4bbf-a921-4bd2-84cc-1d7c25d7e0d0)
+
 
     
       
