@@ -538,7 +538,10 @@ In this section, Various components of projects are explained in detail and real
 
 
   ### Layout  
-  
+
+  - In this section we will present the layouts of the entire design and the subcomponents of the design.
+  - For the layout design we are using **cadence virtuoso** where as for verification like DRC and LVS we are using  **Assura**.
+      
   ### Conclusion
   
   - We have designed 16 byte SRAM by arranging 16 6T SRAM cell in 8 rows.
