@@ -17,6 +17,7 @@
 
     
 - [Design and testbench](#Design_and_testbench)
+- [Layout](#Layout)
 - [Conclusion](#Conclusion)
 
 ## Introduction
@@ -536,7 +537,8 @@ In this section, Various components of projects are explained in detail and real
   ![Screenshot from 2023-10-17 13-42-46](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/fe7c6d9e-8433-4159-875e-e1e558c14e61)
 
 
-
+  ### Layout  
+  
   ### Conclusion
   
   - We have designed 16 byte SRAM by arranging 16 6T SRAM cell in 8 rows.
