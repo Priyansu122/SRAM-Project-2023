@@ -556,6 +556,9 @@ In this section, Various components of projects are explained in detail and real
 
 ![sram](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/8f21f559-4908-4450-a225-712ad76c8333)
 
+![precharge](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/fee19b84-4a4e-476c-ba1f-dd365e7227af)
+
+
 
     
       
