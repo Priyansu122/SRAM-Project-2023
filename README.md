@@ -541,7 +541,15 @@ In this section, Various components of projects are explained in detail and real
 
   - In this section we will present the layouts of the entire design and the subcomponents of the design.
   - For the layout design we are using **cadence virtuoso** where as for verification like DRC and LVS we are using  **Assura**.
+  - ![test_rw_op](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/cd737f08-0ddf-40e9-9183-eb7cd7dcaf65)
 
+    ![test_SA](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/148d8f04-7e2b-47a1-86a4-f5728081e5d1)
+    
+    ![SRAM_pc](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/58240623-66b0-45cb-9271-1e0187b132ce)
+
+    
+
+  
 
     
       
