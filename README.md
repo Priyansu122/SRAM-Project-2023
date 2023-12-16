@@ -544,23 +544,27 @@ In this section, Various components of projects are explained in detail and real
 
     ![sram](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/8f21f559-4908-4450-a225-712ad76c8333)
     <p align="center">6T SRAM</p>  
-    
-   ![test_rw_op](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/cd737f08-0ddf-40e9-9183-eb7cd7dcaf65)
 
+    <!--![SRAM_pc](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/58240623-66b0-45cb-9271-1e0187b132ce)-->
+
+    ![precharge](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/fee19b84-4a4e-476c-ba1f-dd365e7227af)
+    <p align="center">Precharge circuit</p> 
+    
     ![test_SA](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/148d8f04-7e2b-47a1-86a4-f5728081e5d1)
+    <p align="center">Sense Amplifier</p>
     
-    ![SRAM_pc](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/58240623-66b0-45cb-9271-1e0187b132ce)
-
+    ![test_rw_op](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/1ff0978d-c523-49bf-a8d2-065b17daf2c1)
+    <p align="center">Write driver</p>  
+    
+    <p align="center"><u></u>Project Final layout</p></u>  
     
     ![sram_entire_system](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/3cb80f33-c1be-443c-af47-8f156dfb9e4e)
-
-    ![precharge_cir](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/97f2163a-40ac-454d-b86a-b0c71141fc2e)
     
-![decoder](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/390a4bbf-a921-4bd2-84cc-1d7c25d7e0d0)  
+    <p align="center"><u></u>Write driver</p></u>
+   
 
 
 
-![precharge](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/fee19b84-4a4e-476c-ba1f-dd365e7227af)
 
 
 
