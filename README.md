@@ -556,7 +556,9 @@ In this section, Various components of projects are explained in detail and real
     ![test_rw_op](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/1ff0978d-c523-49bf-a8d2-065b17daf2c1)
     <p align="center">Write driver</p>  
     
-    <p align="center"><u></u>Project Final layout</p></u>  
+   
+    **Project Final layout**
+    _________________________
     
     ![sram_entire_system](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/3cb80f33-c1be-443c-af47-8f156dfb9e4e)
 
