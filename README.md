@@ -559,17 +559,8 @@ In this section, Various components of projects are explained in detail and real
     <p align="center"><u></u>Project Final layout</p></u>  
     
     ![sram_entire_system](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/3cb80f33-c1be-443c-af47-8f156dfb9e4e)
-    
-    <p align="center"><u></u>Write driver</p></u>
+
    
-
-
-
-
-
-
-    
-      
   ### Conclusion
   
   - We have designed 16 byte SRAM by arranging 16 6T SRAM cell in 8 rows.
