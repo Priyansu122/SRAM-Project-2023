@@ -548,8 +548,13 @@ In this section, Various components of projects are explained in detail and real
     <!--![SRAM_pc](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/58240623-66b0-45cb-9271-1e0187b132ce)-->
 
     ![precharge](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/fee19b84-4a4e-476c-ba1f-dd365e7227af)
-    <p align="center">Precharge circuit</p> 
+    <p align="center">Precharge circuit</p>   
     
+    ![decoder](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/9866a012-6ac0-46fc-b8bb-1e843958bea1)
+     <p align="center">Column Decoder</p>   
+    
+
+
     ![test_SA](https://github.com/Priyansu122/SRAM-Project-2023/assets/85453216/148d8f04-7e2b-47a1-86a4-f5728081e5d1)
     <p align="center">Sense Amplifier</p>
     
